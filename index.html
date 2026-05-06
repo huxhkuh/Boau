@@ -10,7 +10,7 @@
 <link rel="apple-touch-icon" href="/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Hebrew:wght@500;600;700;800;900&family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700;800;900&family=Rubik:wght@300;400;500;600;700;800;900&family=Assistant:wght@400;600;700;800&family=Secular+One&family=Alef:wght@400;700&family=Noto+Serif+Hebrew:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg-deep: #0d0f12;
@@ -26,7 +26,7 @@
     --text-dim: #7f7a70;
     --border: rgba(244,239,228,0.1);
     --shadow: rgba(0,0,0,0.32);
-    --font-heading: 'Noto Serif Hebrew', serif;
+    --font-heading: 'Heebo', sans-serif;
     --font-body: 'Rubik', sans-serif;
   }
 
@@ -234,21 +234,45 @@
     position: relative;
   }
 
-  .rotating-word {
+   .rotating-word {
     display: block;
     position: absolute;
     inset-inline: 0;
     width: 100%;
     text-align: center;
-    background: none;
+    background: linear-gradient(90deg, var(--paper), var(--accent-clay), var(--accent-blue));
     -webkit-background-clip: text;
-    -webkit-text-fill-color: currentColor;
+    -webkit-text-fill-color: transparent;
     background-clip: text;
-    color: var(--accent-clay);
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform: translateY(50px) scale(0.9) rotate(-2deg);
+    filter: blur(8px);
+    transition:
+      opacity 0.42s cubic-bezier(0.22,1,0.36,1),
+      transform 0.42s cubic-bezier(0.22,1,0.36,1),
+      filter 0.42s ease;
+    text-shadow: 0 0 22px rgba(216,160,111,0.12);
   }
+
+  .rotating-word.active {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0deg);
+    filter: blur(0);
+  }
+
+  .rotating-word.exit {
+    opacity: 0;
+    transform: translateY(-55px) scale(1.06) rotate(2deg);
+    filter: blur(8px);
+  }
+
+  .rotating-word:nth-child(1) { font-family: 'Heebo', sans-serif; font-weight: 900; letter-spacing: -0.04em; }
+  .rotating-word:nth-child(2) { font-family: 'Secular One', sans-serif; font-weight: 400; }
+  .rotating-word:nth-child(3) { font-family: 'Assistant', sans-serif; font-weight: 800; }
+  .rotating-word:nth-child(4) { font-family: 'Alef', sans-serif; font-weight: 700; }
+  .rotating-word:nth-child(5) { font-family: 'Noto Serif Hebrew', serif; font-weight: 900; }
+  .rotating-word:nth-child(6) { font-family: 'Heebo', sans-serif; font-weight: 800; font-style: italic; }
+  .rotating-word:nth-child(7) { font-family: 'Secular One', sans-serif; font-weight: 400; letter-spacing: -0.03em; }
 
   .rotating-word.active { opacity: 1; transform: translateY(0); }
   .rotating-word.exit { opacity: 0; transform: translateY(-30px); }
@@ -595,6 +619,7 @@
 
   .cta-title {
     position: relative;
+    font-family: 'Noto Serif Hebrew', serif;
     font-size: clamp(1.8rem, 5vw, 3rem);
     font-weight: 900;
     line-height: 1.3;
@@ -996,7 +1021,7 @@
   }
 
   if (words.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    window.setInterval(rotate, 2800);
+    window.setInterval(rotate, 1700);
   }
 
   const revealEls = document.querySelectorAll('.reveal');
