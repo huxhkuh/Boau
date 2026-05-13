@@ -161,7 +161,39 @@
     border-color: rgba(255,255,255,0.3);
     transform: translateY(-2px);
   }
+.work-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
 
+.work-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.work-card:hover .work-image {
+  transform: scale(1.05);
+}
+
+.work-card:hover .work-overlay {
+  opacity: 1;
+}
+
+.work-card {
+  text-decoration: none;
+  overflow: hidden;
+}
   .hero {
     min-height: 100vh;
     display: flex;
@@ -935,18 +967,25 @@
                 <path d="M7 20V8.5L12 4l5 4.5V20" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
                 <path d="M4 20h16M10 20v-6h4v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
               </svg>
-            </div>
-            <div class="work-preview-text">עסק מקומי</div>
-          </div>
-          <div class="work-tag">Landing Page</div>
-        </article>
-        <article class="work-card reveal">
-          <div class="work-card-inner">
-            <div class="work-mark" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <path d="M10 6V5a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v1M4 8h16v11H4V8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                <path d="M4 13h16" stroke="currentColor" stroke-width="2"/>
-              </svg>
+          <a href="https://xn--4dbbbobbm0ete.com/"
+   target="_blank"
+   class="work-card reveal">
+
+  <div class="work-card-inner">
+
+    <img src="BOOO.png"
+         alt="BOOO"
+         class="work-image">
+
+    <div class="work-overlay">
+      צפה באתר →
+    </div>
+
+  </div>
+
+  <div class="work-tag">Live Site</div>
+
+</a>
             </div>
             <div class="work-preview-text">שירותים מקצועיים</div>
           </div>
