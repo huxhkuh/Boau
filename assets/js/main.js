@@ -38,7 +38,10 @@ if (gallery) {
   function goToSlide(index) {
     if (!cards.length) return;
     setActive(index);
-    cards[activeIndex].scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', inline: 'center', block: 'nearest' });
+
+    const activeCard = cards[activeIndex];
+    const targetLeft = activeCard.offsetLeft - (track.clientWidth - activeCard.offsetWidth) / 2;
+    track.scrollTo({ left: targetLeft, behavior: reducedMotion ? 'auto' : 'smooth' });
   }
 
   function updateActiveFromScroll() {
