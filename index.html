@@ -169,14 +169,27 @@
       <h2 class="section-heading reveal" id="work-title">אתרים שבנינו</h2>
       <p class="section-sub reveal">כל אתר מותאם אישית לעסק, לקהל ולמטרה.</p>
 
-      <div class="works-grid">
-        <a href="https://xn--4dbbbobbm0ete.com/" target="_blank" rel="noopener" class="work-card reveal" aria-label="צפייה באתר BOOO">
-          <div class="work-card-inner">
-            <img src="BOOO.png" alt="צילום מסך של אתר BOOO" class="work-image">
-            <div class="work-overlay">צפו באתר</div>
-          </div>
-          <div class="work-tag">אתר פעיל</div>
-        </a>
+      <div class="works-gallery reveal" aria-label="גלריית אתרים שבנינו">
+        <button class="gallery-arrow gallery-arrow-next" type="button" aria-label="לעבודה הבאה">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="m15 18-6-6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <button class="gallery-arrow gallery-arrow-prev" type="button" aria-label="לעבודה הקודמת">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <div class="works-track" tabindex="0">
+          <a href="https://xn--4dbbbobbm0ete.com/" target="_blank" rel="noopener" class="work-card reveal" aria-label="צפייה באתר BOOO">
+            <div class="work-card-inner">
+              <img src="BOOO.png" alt="צילום מסך של אתר BOOO" class="work-image">
+              <div class="work-overlay">צפו באתר</div>
+            </div>
+            <div class="work-tag">אתר פעיל</div>
+          </a>
 
         <a href="https://nadlanistzafon.co.il/" target="_blank" rel="noopener" class="work-card reveal" aria-label="צפייה באתר נדלניסט צפון">
           <div class="work-card-inner">
@@ -193,6 +206,13 @@
           </div>
           <div class="work-tag">אתר פעיל</div>
         </a>
+        </div>
+
+        <div class="gallery-dots" aria-hidden="true">
+          <span class="active"></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </div>
   </section>

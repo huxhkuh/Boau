@@ -618,11 +618,26 @@
     color: var(--paper);
   }
 
-  .works-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px;
+  .works-gallery {
+    position: relative;
     margin-top: 46px;
+  }
+
+  .works-track {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(320px, 64%);
+    gap: 18px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: calc((100% - 64%) / 2);
+    padding: 4px calc((100% - 64%) / 2) 18px;
+    scrollbar-width: none;
+  }
+
+  .works-track::-webkit-scrollbar {
+    display: none;
   }
 
   .work-card {
@@ -631,6 +646,7 @@
     aspect-ratio: 4/3;
     position: relative;
     display: block;
+    scroll-snap-align: center;
     transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
   }
 
@@ -690,6 +706,58 @@
     color: var(--text-soft);
     backdrop-filter: blur(8px);
     z-index: 2;
+  }
+
+  .gallery-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 4;
+    width: 48px;
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(244,239,228,0.92);
+    color: #101215;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.28);
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: transform 0.2s, background 0.2s, opacity 0.2s;
+  }
+
+  .gallery-arrow:hover {
+    background: var(--paper);
+    transform: translateY(-50%) scale(1.05);
+  }
+
+  .gallery-arrow-next {
+    left: 8px;
+  }
+
+  .gallery-arrow-prev {
+    right: 8px;
+  }
+
+  .gallery-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .gallery-dots span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(244,239,228,0.22);
+    transition: width 0.25s, background 0.25s;
+  }
+
+  .gallery-dots span.active {
+    width: 24px;
+    border-radius: 999px;
+    background: var(--accent-blue);
   }
 
   .lead-form {
@@ -849,8 +917,16 @@
     .cta-title { font-size: 2.2rem; }
     .hero-proof { margin-top: 26px; }
     .benefit-card { padding: 30px 24px; }
-    .works-grid { grid-template-columns: 1fr; }
+    .works-track {
+      grid-auto-columns: 86%;
+      scroll-padding-inline: 7%;
+      padding-inline: 7%;
+    }
     .work-card { aspect-ratio: 16/11; }
+    .gallery-arrow {
+      width: 42px;
+      height: 42px;
+    }
     .form-field-split { grid-template-columns: 1fr; }
     .step { gap: 18px; padding: 28px 0; }
     .step-num { width: 46px; height: 46px; }
