@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>בּוֹאוּ - אתרים שחושבים אחרת</title>
+<meta name="description" content="בואו בונים אתרים מדויקים, נעימים ומוכנים לפרסום לעסקים שרוצים נוכחות מקצועית בלי תהליך מסובך.">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="icon" sizes="32x32" href="/favicon.png">
 <link rel="icon" sizes="192x192" href="/favicon.png">
@@ -11,804 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700;800;900&family=Rubik:wght@300;400;500;600;700;800;900&family=Assistant:wght@400;600;700;800&family=Secular+One&family=Alef:wght@400;700&family=Noto+Serif+Hebrew:wght@500;600;700;800;900&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg-deep: #0d0f12;
-    --bg-card: #14171a;
-    --bg-card2: #191d20;
-    --paper: #f1eadb;
-    --accent-blue: #8ecae6;
-    --accent-sage: #b8c6a3;
-    --accent-clay: #d8a06f;
-    --accent-rose: #d9a5ad;
-    --text-main: #f4efe4;
-    --text-soft: #bbb6a8;
-    --text-dim: #7f7a70;
-    --border: rgba(244,239,228,0.1);
-    --shadow: rgba(0,0,0,0.32);
-    --font-heading: 'Heebo', sans-serif;
-    --font-body: 'Rubik', sans-serif;
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: var(--font-body);
-    background:
-      linear-gradient(90deg, rgba(244,239,228,0.025) 1px, transparent 1px),
-      linear-gradient(180deg, rgba(244,239,228,0.018) 1px, transparent 1px),
-      var(--bg-deep);
-    background-size: 42px 42px, 42px 42px, auto;
-    color: var(--text-main);
-    direction: rtl;
-    text-align: right;
-    overflow-x: hidden;
-    line-height: 1.7;
-  }
-
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.045'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  a { color: inherit; text-decoration: none; }
-  button, input, textarea { font: inherit; }
-  button { border: 0; }
-
-  .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0,0,0,0);
-    white-space: nowrap;
-    border: 0;
-  }
-
-  nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 100;
-    padding: 18px 32px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    backdrop-filter: blur(20px);
-    background: rgba(8,12,20,0.78);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .nav-logo,
-  .footer-logo {
-    font-family: var(--font-heading);
-    background: linear-gradient(135deg, var(--paper), var(--accent-blue));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .nav-logo {
-    font-size: 1.45rem;
-    font-weight: 400;
-  }
-
-  .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    color: var(--text-soft);
-    font-size: 0.9rem;
-  }
-
-  .nav-links a:hover { color: var(--text-main); }
-
-  .nav-cta,
-  .btn-primary,
-  .btn-outline {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 48px;
-    border-radius: 999px;
-    cursor: pointer;
-    font-weight: 800;
-    transition: transform 0.25s, box-shadow 0.25s, background 0.25s, border-color 0.25s;
-  }
-
-  .nav-cta,
-  .btn-primary {
-    background: var(--paper);
-    color: #101215;
-    box-shadow: 0 8px 0 rgba(0,0,0,0.25);
-  }
-
-  .nav-cta {
-    padding: 10px 22px;
-    font-size: 0.9rem;
-    min-height: 42px;
-  }
-
-  .btn-primary {
-    padding: 17px 44px;
-    font-size: 1.06rem;
-  }
-
-  .nav-cta:hover,
-  .btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 11px 0 rgba(0,0,0,0.25);
-  }
-
-  .btn-outline {
-    background: transparent;
-    color: var(--text-main);
-    border: 1px solid rgba(255,255,255,0.16);
-    padding: 17px 38px;
-    font-size: 1rem;
-  }
-
-  .btn-outline:hover {
-    background: rgba(255,255,255,0.05);
-    border-color: rgba(255,255,255,0.3);
-    transform: translateY(-2px);
-  }
-.work-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.work-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: 700;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  font-size: 1.1rem;
-}
-
-.work-card:hover .work-image {
-  transform: scale(1.05);
-}
-
-.work-card:hover .work-overlay {
-  opacity: 1;
-}
-
-.work-card {
-  text-decoration: none;
-  overflow: hidden;
-}
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 126px 24px 96px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 92px 24px 56px;
-    border: 1px solid rgba(244,239,228,0.08);
-    pointer-events: none;
-  }
-
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: transparent;
-    border: 1px solid rgba(244,239,228,0.16);
-    padding: 8px 18px;
-    border-radius: 4px;
-    font-size: 0.85rem;
-    color: var(--text-soft);
-    margin-bottom: 26px;
-    animation: fadeDown 0.8s ease both;
-  }
-
-  .hero-badge .dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--accent-clay);
-    animation: pulse 2s ease-in-out infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(1.4); }
-  }
-
-  .hero-title {
-    font-family: var(--font-heading);
-    font-size: clamp(3.7rem, 11.5vw, 10.2rem);
-    font-weight: 900;
-    line-height: 0.94;
-    letter-spacing: 0;
-    margin-bottom: 0;
-    max-width: 1040px;
-    animation: fadeDown 0.9s ease 0.1s both;
-  }
-
-  .hero-title .line1 {
-    display: block;
-    color: var(--text-main);
-    white-space: nowrap;
-  }
-
-  .hero-rotating-wrapper {
-    display: block;
-    height: 1.08em;
-    min-width: min(94vw, 1040px);
-    overflow: hidden;
-    position: relative;
-  }
-
-   .rotating-word {
-    display: block;
-    position: absolute;
-    inset-inline: 0;
-    width: 100%;
-    text-align: center;
-    background: linear-gradient(90deg, var(--paper), var(--accent-clay), var(--accent-blue));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    opacity: 0;
-    transform: translateY(50px) scale(0.9) rotate(-2deg);
-    filter: blur(8px);
-    transition:
-      opacity 0.42s cubic-bezier(0.22,1,0.36,1),
-      transform 0.42s cubic-bezier(0.22,1,0.36,1),
-      filter 0.42s ease;
-    text-shadow: 0 0 22px rgba(216,160,111,0.12);
-  }
-
-  .rotating-word.active {
-    opacity: 1;
-    transform: translateY(0) scale(1) rotate(0deg);
-    filter: blur(0);
-  }
-
-  .rotating-word.exit {
-    opacity: 0;
-    transform: translateY(-55px) scale(1.06) rotate(2deg);
-    filter: blur(8px);
-  }
-
-  .rotating-word:nth-child(1) { font-family: 'Heebo', sans-serif; font-weight: 900; letter-spacing: -0.04em; }
-  .rotating-word:nth-child(2) { font-family: 'Secular One', sans-serif; font-weight: 400; }
-  .rotating-word:nth-child(3) { font-family: 'Assistant', sans-serif; font-weight: 800; }
-  .rotating-word:nth-child(4) { font-family: 'Alef', sans-serif; font-weight: 700; }
-  .rotating-word:nth-child(5) { font-family: 'Noto Serif Hebrew', serif; font-weight: 900; }
-  .rotating-word:nth-child(6) { font-family: 'Heebo', sans-serif; font-weight: 800; font-style: italic; }
-  .rotating-word:nth-child(7) { font-family: 'Secular One', sans-serif; font-weight: 400; letter-spacing: -0.03em; }
-
-  .rotating-word.active { opacity: 1; transform: translateY(0); }
-  .rotating-word.exit { opacity: 0; transform: translateY(-30px); }
-
-  .hero-sub {
-    max-width: 660px;
-    font-size: clamp(1.05rem, 2vw, 1.28rem);
-    color: var(--text-soft);
-    margin: 38px auto 42px;
-    line-height: 1.85;
-    font-weight: 400;
-    animation: fadeDown 1s ease 0.3s both;
-  }
-
-  .hero-actions {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-    animation: fadeDown 1s ease 0.45s both;
-  }
-
-  .hero-note,
-  .cta-note,
-  .form-note {
-    font-size: 0.84rem;
-    color: var(--text-dim);
-  }
-
-  @keyframes fadeDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-.privacy-check {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 0.82rem;
-  color: var(--text-soft);
-  line-height: 1.7;
-  text-align: right;
-}
-
-.privacy-check input {
-  margin-top: 4px;
-  accent-color: var(--accent-blue);
-}
-
-.privacy-check a {
-  color: var(--accent-blue);
-  text-decoration: underline;
-  font-weight: 600;
-  transition: opacity 0.2s ease;
-}
-
-.privacy-check a:hover {
-  opacity: 0.8;
-}
-  
-  .scroll-hint {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    color: var(--text-dim);
-    font-size: 0.75rem;
-    animation: fadeDown 1s ease 1.2s both;
-  }
-
-  .scroll-arrow {
-    width: 28px;
-    height: 28px;
-    border: 1px solid var(--border);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: bounce 2.5s ease-in-out infinite;
-  }
-
-  @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(6px); }
-  }
-
-  section { position: relative; z-index: 1; }
-
-  .section-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 96px 24px;
-  }
-
-  .section-label {
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0;
-    color: var(--accent-blue);
-    margin-bottom: 18px;
-    opacity: 0.88;
-  }
-
-  .section-heading {
-    font-size: clamp(1.9rem, 4.5vw, 3.2rem);
-    font-weight: 900;
-    line-height: 1.25;
-    letter-spacing: 0;
-    color: var(--text-main);
-    margin-bottom: 16px;
-  }
-
-  .section-sub {
-    font-size: 1rem;
-    color: var(--text-soft);
-    max-width: 530px;
-  }
-
-  .calm {
-    background: var(--bg-card);
-  }
-
-  .calm-text {
-    max-width: 720px;
-    font-size: clamp(1.14rem, 3vw, 1.52rem);
-    line-height: 1.9;
-    color: var(--text-soft);
-    font-weight: 300;
-  }
-
-  .calm-text strong {
-    color: var(--text-main);
-    font-weight: 700;
-  }
-
-  .calm-highlight {
-    display: inline-block;
-    background: none;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: currentColor;
-    background-clip: text;
-    color: var(--accent-blue);
-    font-weight: 800;
-  }
-
-  .benefits,
-  .works {
-    background: var(--bg-card);
-  }
-
-  .benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 22px;
-    margin-top: 52px;
-  }
-
-  .benefit-card,
-  .work-card,
-  .cta-box {
-    background: var(--bg-card2);
-    border: 1px solid var(--border);
-  }
-
-  .benefit-card {
-    border-radius: 8px;
-    padding: 36px 32px;
-    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .benefit-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(244,239,228,0.035), transparent 55%);
-    pointer-events: none;
-  }
-
-  .benefit-card:hover {
-    transform: translateY(-3px);
-    border-color: rgba(255,255,255,0.14);
-    box-shadow: 0 18px 46px var(--shadow);
-  }
-
-  .benefit-icon {
-    width: 54px;
-    height: 54px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 22px;
-    color: #07101b;
-  }
-
-  .benefit-card:nth-child(1) .benefit-icon { background: var(--accent-blue); }
-  .benefit-card:nth-child(2) .benefit-icon { background: var(--accent-sage); }
-  .benefit-card:nth-child(3) .benefit-icon { background: var(--accent-rose); }
-
-  .benefit-title {
-    font-size: 1.25rem;
-    font-weight: 800;
-    margin-bottom: 10px;
-    color: var(--text-main);
-  }
-
-  .benefit-desc {
-    font-size: 1rem;
-    color: var(--text-soft);
-    line-height: 1.75;
-  }
-
-  .how { background: var(--bg-deep); }
-
-  .steps {
-    display: flex;
-    flex-direction: column;
-    margin-top: 52px;
-    max-width: 720px;
-  }
-
-  .step {
-    display: flex;
-    align-items: flex-start;
-    gap: 24px;
-    padding: 34px 0;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .step:last-child { border-bottom: 0; }
-
-  .step-num {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    background: var(--paper);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 900;
-    font-size: 1.08rem;
-    color: #101215;
-    flex-shrink: 0;
-    box-shadow: 0 6px 0 rgba(0,0,0,0.24);
-  }
-
-  .step-body { padding-top: 4px; }
-
-  .step-title {
-    font-size: 1.18rem;
-    font-weight: 800;
-    color: var(--text-main);
-    margin-bottom: 8px;
-  }
-
-  .step-desc {
-    font-size: 0.96rem;
-    color: var(--text-soft);
-    line-height: 1.75;
-  }
-
-  .how-note {
-    margin-top: 44px;
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background: rgba(244,239,228,0.04);
-    border: 1px solid rgba(244,239,228,0.13);
-    padding: 15px 26px;
-    border-radius: 999px;
-    font-size: 0.95rem;
-    color: var(--paper);
-  }
-
-  .works-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-    margin-top: 46px;
-  }
-
-  .work-card {
-    border-radius: 8px;
-    overflow: hidden;
-    aspect-ratio: 16/10;
-    position: relative;
-    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-  }
-
-  .work-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(255,255,255,0.14);
-    box-shadow: 0 16px 40px rgba(0,0,0,0.42);
-  }
-
-  .work-card-inner {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    background:
-      linear-gradient(135deg, rgba(244,239,228,0.055), rgba(142,202,230,0.055)),
-      repeating-linear-gradient(0deg, rgba(255,255,255,0.025) 0 1px, transparent 1px 18px);
-  }
-
-  .work-mark {
-    width: 58px;
-    height: 58px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(226,232,240,0.08);
-    border: 1px solid rgba(255,255,255,0.1);
-    color: var(--accent-blue);
-  }
-
-  .work-preview-text {
-    font-size: 0.92rem;
-    color: var(--text-soft);
-  }
-
-  .work-tag {
-    position: absolute;
-    bottom: 14px;
-    right: 14px;
-    background: rgba(8,12,20,0.82);
-    border: 1px solid var(--border);
-    padding: 6px 13px;
-    border-radius: 999px;
-    font-size: 0.78rem;
-    color: var(--text-soft);
-    backdrop-filter: blur(8px);
-  }
-
-  .lead-form {
-    background: var(--bg-deep);
-  }
-
-  .cta-box {
-    border-radius: 8px;
-    padding: 72px 42px;
-    max-width: 760px;
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-    background: #16191c;
-    border-color: rgba(244,239,228,0.14);
-  }
-
-  .cta-box::before {
-    content: '';
-    position: absolute;
-    top: -70px;
-    right: -70px;
-    width: 250px;
-    height: 250px;
-    background: linear-gradient(135deg, rgba(216,160,111,0.16), transparent 70%);
-    pointer-events: none;
-  }
-
-  .cta-title {
-    position: relative;
-    font-family: 'Noto Serif Hebrew', serif;
-    font-size: clamp(1.8rem, 5vw, 3rem);
-    font-weight: 900;
-    line-height: 1.3;
-    margin-bottom: 18px;
-    letter-spacing: 0;
-    text-align: center;
-  }
-
-  .cta-title span {
-    background: none;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: currentColor;
-    background-clip: text;
-    color: var(--accent-clay);
-  }
-
-  .lead-intro {
-    position: relative;
-    margin: 0 auto 32px;
-    text-align: center;
-  }
-
-  .form {
-    position: relative;
-    display: grid;
-    gap: 14px;
-    max-width: 520px;
-    margin: 0 auto;
-  }
-
-  .form-field {
-    display: grid;
-    gap: 8px;
-  }
-
-  .form input,
-  .form textarea {
-    width: 100%;
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 8px;
-    background: rgba(8,12,20,0.72);
-    color: var(--text-main);
-    padding: 15px 16px;
-    outline: 0;
-    text-align: right;
-    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
-  }
-
-  .form textarea {
-    min-height: 126px;
-    resize: vertical;
-  }
-
-  .form input::placeholder,
-  .form textarea::placeholder {
-    color: var(--text-dim);
-  }
-
-  .form input:focus,
-  .form textarea:focus {
-    border-color: rgba(125,211,252,0.55);
-    background: rgba(8,12,20,0.9);
-    box-shadow: 0 0 0 4px rgba(125,211,252,0.08);
-  }
-
-  .form .btn-primary {
-    width: 100%;
-    margin-top: 4px;
-  }
-
-  .form-note {
-    text-align: center;
-    line-height: 1.8;
-  }
-
-  footer {
-    background: var(--bg-card);
-    border-top: 1px solid var(--border);
-    padding: 38px 32px;
-    text-align: center;
-  }
-
-  .footer-logo {
-    font-size: 1.3rem;
-    font-weight: 400;
-    margin-bottom: 12px;
-  }
-
-  .footer-copy {
-    font-size: 0.8rem;
-    color: var(--text-dim);
-  }
-
-  .reveal {
-    opacity: 0;
-    transform: translateY(32px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-
-  .reveal.visible { opacity: 1; transform: translateY(0); }
-
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    *, *::before, *::after {
-      animation-duration: 0.001ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.001ms !important;
-    }
-  }
-
-  @media (max-width: 760px) {
-    nav { padding: 14px 18px; }
-    .nav-links a { display: none; }
-    .nav-cta { padding: 9px 16px; font-size: 0.84rem; }
-    .section-inner { padding: 72px 20px; }
-    .hero { padding: 104px 20px 78px; }
-    .hero-rotating-wrapper { min-width: 90vw; }
-    .benefit-card { padding: 30px 24px; }
-    .step { gap: 18px; padding: 28px 0; }
-    .step-num { width: 46px; height: 46px; }
-    .cta-box { padding: 52px 22px; }
-    .btn-primary, .btn-outline { width: 100%; max-width: 340px; }
-  }
-
-  @media (max-width: 420px) {
-    .hero-title { font-size: clamp(2.9rem, 15vw, 4.2rem); }
-    .hero-sub { margin-top: 28px; }
-    .step { flex-direction: column; gap: 14px; }
-    .how-note { border-radius: 8px; align-items: flex-start; }
-  }
-</style>
+<link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 
@@ -826,7 +30,7 @@
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero-badge">
       <span class="dot" aria-hidden="true"></span>
-      אתרים שחושבים אחרת
+      אתר עסקי מוכן לפרסום, בלי בלגן
     </div>
 
     <h1 class="hero-title" id="hero-title">
@@ -843,12 +47,18 @@
     </h1>
 
     <p class="hero-sub">
-      אנחנו בונים עבורכם אתר מדויק, נעים ומוכן לפרסום - בלי שתצטרכו לרדוף אחרי אנשי מקצוע או להבין במונחים טכניים.
+      אנחנו מתרגמים את העסק שלכם לאתר ברור, יפה ומוכן לעבודה - עם שפה, מבנה ועיצוב שמרגישים אנושיים ולא כמו עוד תבנית.
     </p>
 
     <div class="hero-actions">
       <a class="btn-primary" href="#contact">בואו נתחיל</a>
       <span class="hero-note">שיחה קצרה, בלי התחייבות ובלי לחץ</span>
+    </div>
+
+    <div class="hero-proof" aria-label="יתרונות מרכזיים">
+      <span>אפיון קצר</span>
+      <span>עיצוב מותאם</span>
+      <span>עלייה מהירה לאוויר</span>
     </div>
 
     <a class="scroll-hint" href="#why" aria-label="גלו עוד">
@@ -953,43 +163,39 @@
     </div>
   </section>
 
-<section class="works" id="work" aria-labelledby="work-title">
-  <div class="section-inner">
-    <div class="section-label reveal">עבודות</div>
-    <h2 class="section-heading reveal" id="work-title">אתרים שבנינו</h2>
-    <p class="section-sub reveal">כל אתר מותאם אישית לעסק, לקהל ולמטרה.</p>
+  <section class="works" id="work" aria-labelledby="work-title">
+    <div class="section-inner">
+      <div class="section-label reveal">עבודות</div>
+      <h2 class="section-heading reveal" id="work-title">אתרים שבנינו</h2>
+      <p class="section-sub reveal">כל אתר מותאם אישית לעסק, לקהל ולמטרה.</p>
 
-    <div class="works-grid">
-      <a href="https://xn--4dbbbobbm0ete.com/" target="_blank" class="work-card reveal">
-        <div class="work-card-inner">
-          <img src="BOOO.png" alt="BOOO" class="work-image">
-          <div class="work-overlay">צפה באתר →</div>
-        </div>
-        <div class="work-tag">Live Site</div>
-      </a>
+      <div class="works-grid">
+        <a href="https://xn--4dbbbobbm0ete.com/" target="_blank" rel="noopener" class="work-card reveal" aria-label="צפייה באתר BOOO">
+          <div class="work-card-inner">
+            <img src="BOOO.png" alt="צילום מסך של אתר BOOO" class="work-image">
+            <div class="work-overlay">צפו באתר</div>
+          </div>
+          <div class="work-tag">אתר פעיל</div>
+        </a>
 
-      <article class="work-card reveal">
-          <div class="works-grid">
-      <a href="https://nadlanistzafon.co.il/" target="_blank" class="work-card reveal">
-        <div class="work-card-inner">
-          <img src="NAD.png" alt="NAD" class="work-image">
-          <div class="work-overlay">צפה באתר →</div>
-        </div>
-        <div class="work-tag">Live Site</div>
-      </a>
+        <a href="https://nadlanistzafon.co.il/" target="_blank" rel="noopener" class="work-card reveal" aria-label="צפייה באתר נדלניסט צפון">
+          <div class="work-card-inner">
+            <img src="NAD.png" alt="צילום מסך של אתר נדלניסט צפון" class="work-image">
+            <div class="work-overlay">צפו באתר</div>
+          </div>
+          <div class="work-tag">אתר פעיל</div>
+        </a>
 
-    <article class="work-card reveal">
-          <div class="works-grid">
-      <a href="https://hanukapol-7bcf38e7.base44.app/" target="_blank" class="work-card reveal">
-        <div class="work-card-inner">
-          <img src="MONO.png" alt="MONO" class="work-image">
-          <div class="work-overlay">צפה באתר →</div>
-        </div>
-        <div class="work-tag">Live Site</div>
-      </a>
+        <a href="https://hanukapol-7bcf38e7.base44.app/" target="_blank" rel="noopener" class="work-card reveal" aria-label="צפייה באתר MONO">
+          <div class="work-card-inner">
+            <img src="MONO.png" alt="צילום מסך של אתר MONO" class="work-image">
+            <div class="work-overlay">צפו באתר</div>
+          </div>
+          <div class="work-tag">אתר פעיל</div>
+        </a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
   <section class="lead-form" id="contact" aria-labelledby="contact-title">
@@ -1010,41 +216,27 @@
             <input id="name" type="text" name="name" placeholder="שם מלא" autocomplete="name" required>
           </div>
 
-      <div class="form-field">
-  <label class="sr-only" for="phone">טלפון</label>
-  <input 
-    id="phone" 
-    type="tel" 
-    name="phone" 
-    placeholder="טלפון" 
-    autocomplete="tel" 
-    required
-  >
+          <div class="form-field form-field-split">
+            <label class="sr-only" for="phone">טלפון</label>
+            <input id="phone" type="tel" name="phone" placeholder="טלפון" autocomplete="tel" required>
 
-  <label class="sr-only" for="email">כתובת מייל</label>
-  <input 
-    id="email" 
-    type="email" 
-    name="email" 
-    placeholder="כתובת מייל" 
-    autocomplete="email" 
-    required
-  >
-</div>
+            <label class="sr-only" for="email">כתובת מייל</label>
+            <input id="email" type="email" name="email" placeholder="כתובת מייל" autocomplete="email" required>
+          </div>
 
           <div class="form-field">
             <label class="sr-only" for="message">ספרו לנו בקצרה על העסק</label>
             <textarea id="message" name="message" placeholder="ספרו לנו בקצרה על העסק (לא חובה)"></textarea>
           </div>
           
-<label class="privacy-check">
-  <input type="checkbox" required>
-  <span>
-    אני מאשר/ת את
-    <a href="privacy.html" target="_blank">מדיניות הפרטיות</a>
-    ומסכים/ה להשארת הפרטים לצורך יצירת קשר בלבד.
-  </span>
-</label>
+          <label class="privacy-check">
+            <input type="checkbox" required>
+            <span>
+              אני מאשר/ת את
+              <a href="privacy.html" target="_blank" rel="noopener">מדיניות הפרטיות</a>
+              ומסכים/ה להשארת הפרטים לצורך יצירת קשר בלבד.
+            </span>
+          </label>
           
           <button type="submit" class="btn-primary">שלחו לי פרטים</button>
 
@@ -1062,48 +254,6 @@
   <p class="footer-copy">© <span id="year">2026</span> בואו - אתרים שחושבים אחרת. כל הזכויות שמורות.</p>
 </footer>
 
-<script>
-  const words = document.querySelectorAll('.rotating-word');
-  let current = 0;
-
-  function rotate() {
-    if (!words.length) return;
-
-    words[current].classList.remove('active');
-    words[current].classList.add('exit');
-
-    const previous = current;
-    window.setTimeout(() => words[previous].classList.remove('exit'), 600);
-
-    current = (current + 1) % words.length;
-    words[current].classList.add('active');
-  }
-
-  if (words.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    window.setInterval(rotate, 1700);
-  }
-
-  const revealEls = document.querySelectorAll('.reveal');
-
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-    revealEls.forEach((el, index) => {
-      el.style.transitionDelay = `${(index % 4) * 0.08}s`;
-      observer.observe(el);
-    });
-  } else {
-    revealEls.forEach((el) => el.classList.add('visible'));
-  }
-
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
