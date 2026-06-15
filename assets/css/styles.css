@@ -152,6 +152,12 @@
     box-shadow: 0 8px 0 rgba(9,72,69,0.2);
   }
 
+  .btn-primary:disabled {
+    cursor: wait;
+    opacity: 0.72;
+    transform: none;
+  }
+
   .btn-outline {
     background: transparent;
     color: var(--text-main);
@@ -918,6 +924,15 @@
     margin: 0 auto;
   }
 
+  .form-honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
   .form-field {
     display: grid;
     gap: 8px;
@@ -965,6 +980,19 @@
   .form-note {
     text-align: center;
     line-height: 1.8;
+  }
+
+  .form-status {
+    min-height: 1.7em;
+    color: var(--accent-blue);
+    font-size: 0.95rem;
+    font-weight: 800;
+    text-align: center;
+    line-height: 1.7;
+  }
+
+  .form-status.error {
+    color: var(--accent-clay);
   }
 
   footer {

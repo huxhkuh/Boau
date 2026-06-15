@@ -85,6 +85,56 @@ if (gallery) {
   resetAutoplay();
 }
 
+const contactForm = document.querySelector('.form');
+
+if (contactForm) {
+  const statusEl = contactForm.querySelector('.form-status');
+  const submitButton = contactForm.querySelector('button[type="submit"]');
+  const contactEndpoint = contactForm.dataset.contactEndpoint?.trim();
+
+  function setFormStatus(message, isError = false) {
+    if (!statusEl) return;
+    statusEl.textContent = message;
+    statusEl.classList.toggle('error', isError);
+  }
+
+  if (contactEndpoint) {
+    contactForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(contactForm);
+      const payload = Object.fromEntries(formData.entries());
+      payload.pageUrl = window.location.href;
+
+      if (payload.company) {
+        setFormStatus('תודה, הפנייה התקבלה.');
+        contactForm.reset();
+        return;
+      }
+
+      setFormStatus('שולח את הפרטים...');
+      submitButton.disabled = true;
+
+      try {
+        const response = await fetch(contactEndpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+
+        if (!response.ok) throw new Error('Request failed');
+
+        setFormStatus('קיבלתי את הפרטים. אחזור אליכם בהקדם.');
+        contactForm.reset();
+      } catch (error) {
+        setFormStatus('משהו בשליחה לא עבד. אפשר לנסות שוב בעוד רגע.', true);
+      } finally {
+        submitButton.disabled = false;
+      }
+    });
+  }
+}
+
 const revealEls = document.querySelectorAll('.reveal');
 
 if ('IntersectionObserver' in window) {

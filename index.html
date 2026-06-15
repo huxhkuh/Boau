@@ -258,7 +258,11 @@
           רוב בעלי העסקים לא צריכים מערכת חללית. הם פשוט צריכים אתר שלא מביך לשלוח, שנראה רציני, ושעושה חשק להישאר. אם בא לכם לבנות משהו כזה - אני פה 🙂
         </p>
 
-        <form class="form" action="https://formspree.io/f/mdabebab" method="POST">
+        <form class="form" action="https://formspree.io/f/mdabebab" method="POST" data-contact-endpoint="">
+          <input type="hidden" name="_subject" value="פנייה חדשה מאתר בואו">
+          <input type="hidden" name="source" value="boau-homepage">
+          <input class="form-honeypot" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+
           <div class="form-field">
             <label class="sr-only" for="name">שם מלא</label>
             <input id="name" type="text" name="name" placeholder="שם מלא" autocomplete="name" required>
@@ -291,6 +295,7 @@
           <p class="form-note">
             בלי התחייבות | בלי לחץ | אחזור אליכם בהקדם
           </p>
+          <p class="form-status" aria-live="polite"></p>
         </form>
       </div>
     </div>

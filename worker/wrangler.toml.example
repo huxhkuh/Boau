@@ -1,0 +1,11 @@
+name = "boau-contact"
+main = "contact-worker.mjs"
+compatibility_date = "2026-06-15"
+
+[vars]
+ALLOWED_ORIGIN = "https://boau.click"
+CONTACT_TO_EMAIL = "your-email@example.com"
+CONTACT_FROM_EMAIL = "Boau <contact@your-verified-domain.com>"
+
+# Set this as a secret, not in this file:
+# wrangler secret put RESEND_API_KEY
