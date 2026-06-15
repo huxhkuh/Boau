@@ -453,12 +453,13 @@
   }
 
   .section-label {
-    font-size: 0.78rem;
-    font-weight: 700;
+    font-size: 1.42rem;
+    font-weight: 900;
+    line-height: 1.35;
     letter-spacing: 0;
     color: var(--accent-blue);
-    margin-bottom: 18px;
-    opacity: 0.88;
+    margin-bottom: 24px;
+    opacity: 1;
   }
 
   .section-heading {
@@ -1017,6 +1018,7 @@
     }
     .hero-note { font-size: 1.05rem; }
     .hero-rotating-wrapper { min-width: 90vw; }
+    .section-label { font-size: 1.2rem; margin-bottom: 18px; }
     .section-heading { font-size: 2.2rem; }
     .calm-text { font-size: 1.18rem; }
     .conversation { gap: 14px; margin-top: 26px; }
