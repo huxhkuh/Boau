@@ -335,8 +335,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 14px;
+    gap: 18px;
     animation: fadeDown 1s ease 0.45s both;
+  }
+
+  .hero-cta {
+    max-width: 560px;
+    min-height: 76px;
+    padding-inline: 46px;
+    text-align: center;
+    line-height: 1.35;
   }
 
   .hero-proof {
@@ -360,11 +368,19 @@
     font-size: 0.9rem;
   }
 
-  .hero-note,
   .cta-note,
   .form-note {
     font-size: 0.84rem;
     color: var(--text-dim);
+  }
+
+  .hero-note {
+    max-width: 720px;
+    color: var(--text-soft);
+    font-size: 1.18rem;
+    font-weight: 700;
+    line-height: 1.75;
+    text-align: center;
   }
 
   @keyframes fadeDown {
@@ -993,6 +1009,13 @@
     .hero { padding: 104px 20px 78px; }
     .hero-title { font-size: 4.8rem; }
     .hero-sub { font-size: 1.08rem; }
+    .hero-cta {
+      max-width: 390px;
+      min-height: 70px;
+      padding-inline: 28px;
+      font-size: 1rem;
+    }
+    .hero-note { font-size: 1.05rem; }
     .hero-rotating-wrapper { min-width: 90vw; }
     .section-heading { font-size: 2.2rem; }
     .calm-text { font-size: 1.18rem; }
@@ -1033,6 +1056,8 @@
     .hero-title { font-size: 3.4rem; }
     .hero-title .line1 { white-space: normal; }
     .hero-sub { margin-top: 28px; }
+    .hero-cta { max-width: 100%; }
+    .hero-note { font-size: 1rem; }
     .works-track { grid-auto-columns: 90%; padding-inline: 5%; }
     .work-card-inner { min-height: 240px; }
     .hero-proof { justify-content: stretch; width: 100%; }
