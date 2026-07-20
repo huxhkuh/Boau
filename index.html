@@ -1,312 +1,401 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="he" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>בּוֹאוּ - אתרים שחושבים אחרת</title>
-<meta name="description" content="אני יוסי. אני בונה אתרים בעזרת AI, Web Coding והרבה ליטושים קטנים שגורמים לאתר להרגיש כמו עסק אמיתי.">
-<link rel="icon" type="image/png" href="/favicon.png">
-<link rel="icon" sizes="32x32" href="/favicon.png">
-<link rel="icon" sizes="192x192" href="/favicon.png">
-<link rel="apple-touch-icon" href="/favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700;800;900&family=Rubik:wght@300;400;500;600;700;800;900&family=Assistant:wght@400;600;700;800&family=Secular+One&family=Alef:wght@400;700&family=Noto+Serif+Hebrew:wght@500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>בּוֹאוּ</title>
+  <meta name="description" content="בואו לבנות אתר עם אישיות. אתר שחי אותכם, שמרגיש את הלב הפועם של העסק שלכם.">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preload" as="image" href="assets/images/cinematic/studio-wide.webp" type="image/webp" fetchpriority="high">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&amp;family=Noto+Serif+Hebrew:wght@600;700;800;900&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#top">דלגו לתוכן</a>
+  <div class="progress" aria-hidden="true"><span></span></div>
 
-<nav aria-label="ניווט ראשי">
-  <a class="nav-logo" href="#top" aria-label="בואו - חזרה לראש הדף">בּוֹאוּ</a>
-  <div class="nav-links">
-    <a href="#why">למה צריך אותי</a>
-    <a href="#process">מה אני עושה</a>
-    <a href="#work">עבודות</a>
+  <div class="journey-atmosphere" aria-hidden="true">
+    <span class="atmosphere-light"></span>
+    <span class="atmosphere-line"></span>
+    <span class="atmosphere-grain"></span>
   </div>
-  <a class="nav-cta" href="#contact">דברו איתי</a>
-</nav>
 
-<main id="top">
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="hero-badge">
-      <span class="dot" aria-hidden="true"></span>
-      AI יודע לייצר אתר. אני עוזר לו להרגיש אמיתי.
-    </div>
+  <header class="site-header">
+    <a class="brand" href="#top">בּוֹאוּ</a>
+    <nav class="scene-nav" aria-label="ניווט ראשי">
+      <a href="#projects">עבודות</a>
+      <a class="header-cta" href="#contact">בואו נדבר על האתר שלכם</a>
+    </nav>
+  </header>
 
-    <h1 class="hero-title" id="hero-title">
-      <span class="line1">בואו לבנות אתר</span>
-      <span class="hero-rotating-wrapper" id="rotator" aria-live="polite">
-        <span class="rotating-word active">מקצועי</span>
-        <span class="rotating-word">אמין</span>
-        <span class="rotating-word">עובד</span>
-        <span class="rotating-word">נקי</span>
-        <span class="rotating-word">שזוכרים</span>
-        <span class="rotating-word">מהיר</span>
-        <span class="rotating-word">מדויק</span>
-      </span>
-    </h1>
+  <main id="top" class="cinematic-journey">
+    <section class="opening-story light-scene" id="machine" data-scene="opening" aria-labelledby="hero-title">
+      <div class="opening-stage">
+        <div class="cinematic-shots" aria-hidden="true">
+          <figure class="cinema-shot shot-wide">
+            <img src="assets/images/cinematic/studio-wide.webp" alt="" width="1672" height="941" fetchpriority="high" decoding="async">
+            <span class="screen-life screen-life-wide"><i></i><i></i><i></i><i></i></span>
+          </figure>
+          <figure class="cinema-shot shot-close">
+            <img src="assets/images/cinematic/studio-close.webp" alt="" width="1672" height="941" loading="eager" decoding="async">
+            <span class="screen-life screen-life-close"><i></i><i></i><i></i><i></i><i></i></span>
+          </figure>
+          <figure class="cinema-shot shot-digital">
+            <img src="assets/images/cinematic/digital-world.webp" alt="" width="1672" height="941" loading="eager" decoding="async">
+            <span class="living-portal">
+              <i></i><i></i><i></i><i></i><i></i><i></i>
+              <b></b><b></b>
+            </span>
+            <span class="motion-band"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          </figure>
+          <canvas class="cinema-particles"></canvas>
+          <span class="cinema-light-leak"></span>
+          <span class="cinema-vignette"></span>
+          <span class="cinema-matte cinema-matte-top"></span>
+          <span class="cinema-matte cinema-matte-bottom"></span>
+        </div>
+        <div class="opening-grid" aria-hidden="true"></div>
+        <div class="room-light" aria-hidden="true"></div>
+        <div class="wall-frame wall-frame-one" aria-hidden="true"></div>
+        <div class="wall-frame wall-frame-two" aria-hidden="true"></div>
 
-    <p class="hero-sub">
-      או רגע. בעצם לא. כי היום כבר לא באמת “בונים אתר”. פותחים AI, כותבים כמה משפטים, לוחצים Generate - ויש אתר. לפעמים אפילו די יפה. אז למה צריך אותנו?.
-    </p>
+        <div class="hero-copy opening-panel opening-intro">
+          <p class="eyebrow">בּוֹאוּ</p>
+          <h1 id="hero-title">בואו לבנות אתר<br><em>עם אישיות.</em></h1>
+          <p class="hero-lead">אתר שחי אותכם, שמרגיש את הלב הפועם של העסק שלכם.</p>
+        </div>
 
-    <div class="hero-actions">
-      <a class="btn-primary hero-cta" href="#contact">בלי הרבה ברבורים, אני רוצה להשאיר פרטים</a>
-      <span class="hero-note">בלי בלגן, בלי מושגים מסובכים, ובלי אתר שנראה כמו כולם</span>
-    </div>
-
-    <div class="hero-proof" aria-label="יתרונות מרכזיים">
-      <span>AI</span>
-      <span>Web Coding</span>
-      <span>ליטושים קטנים</span>
-    </div>
-
-    <a class="scroll-hint" href="#why" aria-label="גלו עוד">
-      <span>גלו עוד</span>
-      <span class="scroll-arrow" aria-hidden="true">
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-          <path d="M6 2v8M3 7l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </span>
-    </a>
-  </section>
-
-  <section class="calm" id="why">
-    <div class="section-inner reveal">
-      <div class="section-label">אז למה בכלל צריך מישהו?</div>
-      <div class="conversation personal-story" aria-label="הסבר אישי על בניית אתרים עם AI">
-        <p>
-          שאלה מעולה 😅
-        </p>
-        <p>
-          אני יוסי. ואני חי עמוק בתוך העולם הזה של AI, אתרים, עיצוב, Web Coding וכל הבלאגן שמסביב.
-        </p>
-        <p>
-          והאמת? AI נהיה טוב בצורה די מפחידה. ברמה שלפעמים אני מסתכל על דברים שהוא מוציא ואומר: “אה. אוקיי. זה כבר לא צעצוע.”
-        </p>
-        <p>
-          אבל אז מגיעים הדברים הקטנים. הכפתור שיושב קצת מוזר. העמוד שמרגיש עמוס בלי להבין למה. המובייל שנראה “בערך”. האנימציה שעושה תחושה של אתר מ־2018. הכותרת שנשמעת כאילו רובוט למד קופי ביוטיוב.
-        </p>
-        <p>
-          וכל הדברים האלה? הם בדיוק ההבדל בין “נחמד” לבין “וואלה, זה נראה עסק אמיתי.”
-        </p>
-        <p>
-          ופה אני נכנס. לא בתור “סוכנות דיגיטל חדשנית לפתרונות AI מתקדמים” (אוי ואבוי 😅). פשוט בתור מישהו שכבר בנה, פירק, שיפר, שבר ותיקן מספיק אתרים כדי להבין מה גורם לאתר להרגיש נכון.
-        </p>
-        <p>
-          וכן - אני גם נכנס לקוד כשצריך. לא בקטע של האקר עם קפוצ'ון. פשוט כי לפעמים צריך להזיז איזה בורג קטן מאחורי הקלעים כדי שכל האתר יפסיק להרגיש... קצת עקום.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="benefits" aria-labelledby="benefits-title">
-    <div class="section-inner">
-      <div class="section-label reveal">מה זה בכלל Web Coding?</div>
-      <h2 class="section-heading reveal" id="benefits-title">כל הדברים שאנשים לא יודעים להסביר - אבל ישר מרגישים</h2>
-      <div class="benefits-grid">
-        <article class="benefit-card reveal">
-          <div class="benefit-icon" aria-hidden="true">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-              <path d="M12 3 14.5 9.5 21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-            </svg>
+        <div class="desk-scene" aria-hidden="true">
+          <div class="foreground-plant"><i></i><i></i><i></i><span></span></div>
+          <div class="desk-props"><span></span><i></i></div>
+          <div class="person-back">
+            <span class="person-head"></span>
+            <span class="person-body"></span>
           </div>
-          <h3 class="benefit-title">התחושה</h3>
-          <p class="benefit-desc">למה אתר אחד מרגיש יקר, ואתר אחר מרגיש כמו תבנית AI שעברה התעללות רגשית.</p>
-        </article>
-        <article class="benefit-card reveal">
-          <div class="benefit-icon" aria-hidden="true">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-              <path d="M4 5h16v11H4V5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-              <path d="M2 19h20M9 9h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3 class="benefit-title">הקצב</h3>
-          <p class="benefit-desc">המרווחים, התנועה, איך הכותרות יושבות, איך האתר מגיב ואיך הכול מתחבר.</p>
-        </article>
-        <article class="benefit-card reveal">
-          <div class="benefit-icon" aria-hidden="true">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-              <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="2"/>
-              <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
-              <path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3 class="benefit-title">המחשבה</h3>
-          <p class="benefit-desc">AI יודע לייצר אתר. הקטע הוא לגרום לו להרגיש כאילו מישהו באמת חשב עליו.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="how" id="process" aria-labelledby="process-title">
-    <div class="section-inner">
-      <div class="section-label reveal">אז איך זה עובד?</div>
-      <h2 class="section-heading reveal" id="process-title">פשוט. בלי פודקאסטים ובלי מילים מפוצצות</h2>
-      <p class="section-sub reveal">באמת שאפשר לעשות לבד היום. יש כלים מטורפים. אבל הרבה אנשים מגיעים מהר לשלב של: “רגע... למה זה עדיין מרגיש קצת מוזר?” וזה שלב מאוד אמיתי 😅</p>
-
-      <div class="steps">
-        <article class="step reveal">
-          <div class="step-num">1</div>
-          <div class="step-body">
-            <h3 class="step-title">אתם מספרים מה העסק עושה</h3>
-            <p class="step-desc">רגיל. בלי מילים כמו Funnel או UX Optimization או כל מיני דברים של אנשים עם פודקאסט.</p>
-          </div>
-        </article>
-        <article class="step reveal">
-          <div class="step-num">2</div>
-          <div class="step-body">
-            <h3 class="step-title">אני בונה מהר בעזרת AI</h3>
-            <p class="step-desc">כי אין סיבה לעבוד לאט אם אפשר לעבוד חכם.</p>
-          </div>
-        </article>
-        <article class="step reveal">
-          <div class="step-num">3</div>
-          <div class="step-body">
-            <h3 class="step-title">ואז מתחיל החלק החשוב</h3>
-            <p class="step-desc">הליטושים. הדיוקים. הקטעים הקטנים שגורמים לאתר להרגיש לא גנרי, לא תבנית, לא “AI”. אלא פשוט... טוב.</p>
-          </div>
-        </article>
-      </div>
-
-      <div class="how-note reveal">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-          <path d="m9 12 2 2 4-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        לפעמים צריך גם להגיד ל־AI: “די. שב רגע בצד. אני אמשיך מפה.”
-      </div>
-    </div>
-  </section>
-
-  <section class="works" id="work" aria-labelledby="work-title">
-    <div class="section-inner">
-      <div class="section-label reveal">עבודות</div>
-      <h2 class="section-heading reveal" id="work-title">מה יוצא בסוף?</h2>
-      <p class="section-sub reveal">אתר שנראה מקצועי, עובד חלק, מרגיש אמין, ולא נראה כאילו מישהו לחץ Generate וברח.</p>
-
-      <div class="works-gallery reveal" aria-label="גלריית אתרים שבניתי">
-        <button class="gallery-arrow gallery-arrow-next" type="button" aria-label="לעבודה הבאה">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="m15 18-6-6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-
-        <button class="gallery-arrow gallery-arrow-prev" type="button" aria-label="לעבודה הקודמת">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-
-        <div class="works-track" tabindex="0">
-          <a href="https://xn--4dbbbobbm0ete.com/" target="_blank" rel="noopener" class="work-card reveal" aria-label="צפייה באתר BOOO">
-            <div class="work-card-inner">
-              <img src="BOOO.png" alt="צילום מסך של אתר BOOO" class="work-image">
-              <div class="work-overlay">צפו באתר</div>
+          <div class="desk-line"></div>
+          <div class="monitor-shell">
+            <div class="machine-window">
+              <div class="window-bar"><i></i><i></i><i></i></div>
+              <div class="prompt-line"><span></span><b></b></div>
+              <div class="template">
+                <div class="template-title"></div>
+                <div class="template-copy"></div>
+                <div class="template-copy short"></div>
+                <div class="template-cards"><i></i><i></i><i></i></div>
+                <div class="template-button"></div>
+              </div>
+              <div class="scan-line"></div>
+              <div class="screen-portal"></div>
             </div>
-            <div class="work-info">
-              <span class="work-tag">אתר פעיל</span>
-              <h3 class="work-title">BOOO</h3>
-              <p class="work-desc">אתר צבעוני ונגיש שמציג מותג בצורה ברורה, מהירה וזכירה.</p>
+            <span class="monitor-stand"></span>
+          </div>
+        </div>
+
+        <article class="opening-panel opening-beat opening-summary">
+          <div class="summary-prompt">
+            <p>רגע, אבל היום הרי אפשר להיכנס לכלי AI, לכתוב „תבנה לי אתר ליועץ משכנתאות”, ולחכות כמה דקות. ומקבלים אתר</p>
+          </div>
+          <div class="summary-result">
+            <p>מה מקבלים?</p>
+            <strong>אתר.</strong>
+          </div>
+          <div class="summary-pretty">
+            <p>הוא יכול להיות אפילו יפה.</p>
+            <p>הכפתורים במקום. התמונות יפות. הכול עובד.</p>
+          </div>
+          <div class="summary-flat">
+            <p>אבל הוא שטוח. ריק, אורירי. </p>
+            <p>משהו לא עובד.</p>
+            <p>אנחנו לא יודעים להגיד למה.</p>
+            <p>אבל הוא לא משכנע, משהו שמה לא עובד, לא זז, לא מניע.</p>
+          </div>
+        </article>
+
+        <div class="hero-scroll" aria-hidden="true"><span></span></div>
+      </div>
+    </section>
+
+    <section class="disconnect dark-scene" data-scene="digital-interior" aria-label="הפער בין אנשים למכונות">
+      <div class="disconnect-sticky">
+        <div class="digital-interior" aria-hidden="true">
+          <img class="digital-world-still" src="assets/images/cinematic/digital-world.webp" alt="" width="1672" height="941" loading="eager" decoding="async">
+          <span class="living-portal digital-living-portal">
+            <i></i><i></i><i></i><i></i><i></i><i></i>
+            <b></b><b></b>
+          </span>
+          <span class="motion-band digital-motion-band"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="digital-plane plane-one"></span>
+          <span class="digital-plane plane-two"></span>
+          <span class="digital-plane plane-three"></span>
+          <i class="digital-axis axis-one"></i>
+          <i class="digital-axis axis-two"></i>
+        </div>
+        <p class="reveal-kicker">אני יודע למה.</p>
+        <div class="split-sentence">
+          <p class="human-line">כי אנשים לא מדברים עם מכונות</p>
+          <span class="broken-link" aria-hidden="true"><i></i><i></i></span>
+          <p class="machine-line">ומכונות לא מדברות עם אנשים.</p>
+        </div>
+        <div class="human-wipe" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <section class="problem light-scene" data-scene="human-layer">
+      <div class="problem-depth" aria-hidden="true"><span></span><i></i></div>
+      <div class="editorial-copy">
+        <p class="large-copy">אז יכול להיות שהוא הוציא לכם איזה עיצוב ממאגר העיצובים שלו, וחירטט לכם איזה שהוא טקסט שנראה ברגע הראשון משכנע.</p>
+        <p class="hard-stop">אבל לא.</p>
+        <p>אתם צריכים בן אדם שיכתוב את הטקסט, או לפחות יתקן אותו.</p>
+        <p>שלא יהיה גנרי, שלא יצעק AI&nbsp; יצר אותי </p>
+      </div>
+    </section>
+
+    <section class="bridge light-scene" id="bridge" data-scene="bridge">
+      <div class="bridge-thread" aria-hidden="true"><span></span></div>
+      <div class="bridge-question">
+        <p>רגע, אבל אם אני אקח אדם (או כמה...) שיכתוב קוד ואדם שיכתוב לי את האתר (בסוד, קוראים לזה קופירייטינג) זה יעלה לי הון תועפות, אני מחפש פיתרון זול.</p>
+      </div>
+
+      <div class="bridge-answer">
+        <div class="bridge-copy">
+          <p class="answer-lead">בדיוק פה אני נכנס.</p>
+          <p class="answer-title">אני המתווך.</p>
+          <p>יש לי ידע בכתיבה, יש לי חוש עיצוב, וכבר התעסקתי המון עם AI ואני יודע איך לעבוד איתו.</p>
+        </div>
+      </div>
+
+      <div class="build-fast">
+        <p>אני בונה בAI, וזה בונה מהר, אבל אני יודע איך לגרום לו להוציא משהו עוצר נשימה.</p>
+      </div>
+
+      <div class="manifesto">
+        <p>אבל אני לא נותן לו להחליט איך העסק שלכם יישמע. זה התפקיד שלכם (ושלי)</p>
+        <div class="manifesto-lines">
+          <p>אני כותב.</p>
+          <p>אני מעצב.</p>
+          <p>אני בודק מה מרגיש נכון ומה מרגיש כמו תבנית.</p>
+        </div>
+        <p>ואני מכוון את הכלים שוב ושוב, עד שהאתר מפסיק להיראות כאילו מישהו כתב פרומפט (פרומפט זה ההנחיות של הAI) ולחץ על 'צור'</p>
+      </div>
+
+      <div class="camera-analogy">
+        <div class="camera" aria-hidden="true"><span></span><i></i></div>
+        <div>
+          <p>אפשר לבנות אתר לבד בעזרת AI.</p>
+          <p>יודעים מה? זה כמו לקנות מצלמה טובה במקום להזמין צלם לחתונה.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="craft light-scene" id="craft" data-scene="craft" aria-labelledby="craft-title">
+      <div class="craft-portal" aria-hidden="true"><span></span><i></i></div>
+      <div class="section-shell">
+        <h2 id="craft-title">מה אני בעצם מביא לאתר?</h2>
+
+        <article class="craft-card words-card">
+          <div class="craft-number">א</div>
+          <div class="craft-copy">
+            <h3>מילים שאנשים רוצים לקרוא</h3>
+            <p>לא ממלאים מקום בטקסט רק כי צריך פסקה מתחת לכותרת.</p>
+            <p>המילים באתר צריכות לתפוס את העין, לעורר סקרנות ולהסביר ללקוח למה כדאי לו להישאר עוד רגע.</p>
+            <p>קופירייטינג הוא לא קישוט שמוסיפים בסוף.</p>
+            <p>הוא חלק מהאתר. האתר צריך למשוך אנשים, למשוך לקוחות, ושהם לא ירצו לעזוב את האתר.</p>
+          </div>
+          <div class="eye-catcher" aria-label="הנה דוגמא לאיך תופסים לכם את העיניים">
+            <span>הנה</span>
+            <span>דוגמא</span>
+            <span>לאיך</span>
+            <span>תופסים</span>
+            <span>לכם</span>
+            <span>את</span>
+            <span>העיניים</span>
+          </div>
+        </article>
+
+        <article class="craft-card design-card">
+          <div class="craft-number">ב</div>
+          <div class="craft-copy">
+            <h3>עיצוב שלא מרגיש משוכפל</h3>
+            <p class="feature-line">העסק שלכם הוא לא עסק אחר. הוא העסק שלכם</p>
+            <p>אין סיבה שהאתר שלו ייראה כמו כולם. הוא צריך את הקו שלו, הייחודי.</p>
+            <p>אני בונה לכל אתר שפה משלו, בקצב, בצבעים, בכותרות, בתנועה ובפרטים הקטנים שאי אפשר תמיד להסביר, אבל מרגישים מיד.</p>
+          </div>
+          <div class="visual-language" aria-hidden="true">
+            <div class="design-frame design-frame-large"><span></span><i></i></div>
+            <div class="design-frame design-frame-copy"><span></span><span></span><span></span></div>
+            <div class="design-frame design-frame-accent"></div>
+          </div>
+        </article>
+
+        <article class="craft-card ai-card">
+          <div class="craft-number">ג</div>
+          <div class="craft-copy">
+            <h3>ניסיון בעבודה עם AI</h3>
+            <p class="feature-line">AI יכול להוציא תוצאה יפה מאוד.</p>
+            <p>אחרי מספיק ניסיונות, אתרים, טעויות ותיקונים, לומדים איך להוציא מהכלים האלה הרבה יותר ממה שיוצא מפרומפט אחד.</p>
+          </div>
+          <div class="iterations" aria-hidden="true">
+            <span>01</span><span>02</span><span>03</span><span>04</span><span>05</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="process light-scene" id="process" data-scene="process" aria-labelledby="process-title">
+      <div class="section-shell">
+        <h2 id="process-title">אז איך זה עובד?</h2>
+
+        <div class="process-grid">
+          <div class="process-rail" aria-hidden="true"><span></span></div>
+          <article class="process-step">
+            <div class="step-dot">1</div>
+            <div>
+              <h3>קודם כול, מדברים</h3>
+              <p>אתם מספרים לי על העסק.</p>
+              <p>מה אתם עושים, מי הלקוחות שלכם, מה הם צריכים להבין, ומה אתם רוצים שהם יעשו כשהם מגיעים לאתר.</p>
+              <p>לא צריך להגיע עם מסמך אפיון של ארבעים עמודים.</p>
+              <p>מספיק שתכירו את העסק שלכם.</p>
+            </div>
+          </article>
+
+          <article class="process-step">
+            <div class="step-dot">2</div>
+            <div>
+              <h3>אחר כך אני בונה</h3>
+              <p>אני מחבר בין הכתיבה, העיצוב והטכנולוגיה, ובונה אתר שמתאים לעסק, שחי אותו ונושם אותו. ושהוא מדויק מדויק למה שאתם מחפשים</p>
+              <p>דף נחיתה, אתר תדמית, אתר מורכב יותר או חנות.</p>
+              <p>הכלים משתנים. המטרה נשארת אותה מטרה:</p>
+              <p class="process-punch">לגרום לאנשים לעצור, להבין ולהתקדם.</p>
+            </div>
+          </article>
+
+          <article class="process-step final-step">
+            <div class="step-dot">3</div>
+            <div>
+              <h3>ואז עוברים על הטקסט, מחדדים את הכותרות, מסדרים את הקצב, בודקים איך הוא נראה, ומתקנים כל דבר קטן שגורם לאתר להרגיש קצת עקום.</h3>
+              <p>כי בין אתר „די יפה” לאתר שאפשר לשלוח בגאווה נמצאים בדיוק הדברים הקטנים האלה.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="process-exit" aria-hidden="true"><span></span></div>
+    </section>
+
+    <section class="projects dark-scene" id="projects" data-scene="portfolio" aria-labelledby="projects-title">
+      <div class="projects-pin">
+        <div class="projects-heading">
+          <h2 id="projects-title">עבודות</h2>
+          <div class="projects-progress" aria-hidden="true"><span></span></div>
+        </div>
+
+        <div class="projects-track">
+          <a class="project-panel project-booo" href="https://xn--4dbbbobbm0ete.com/" target="_blank" rel="noopener">
+            <div class="project-visual"><img src="BOOO.png" alt="צילום מסך של אתר BOOO" loading="lazy" decoding="async"></div>
+            <div class="project-meta">
+              <span>BOOO</span>
+              <p>אתר צבעוני ונגיש שמציג מותג בצורה ברורה, מהירה וזכירה.</p>
             </div>
           </a>
 
-          <a href="https://nadlanistzafon.co.il/" target="_blank" rel="noopener" class="work-card reveal" aria-label="צפייה באתר נדלניסט צפון">
-            <div class="work-card-inner">
-              <img src="NAD.png" alt="צילום מסך של אתר נדלניסט צפון" class="work-image">
-              <div class="work-overlay">צפו באתר</div>
-            </div>
-            <div class="work-info">
-              <span class="work-tag">אתר פעיל</span>
-              <h3 class="work-title">נדלניסט צפון</h3>
-              <p class="work-desc">נוכחות מקצועית לעסק נדל״ן, עם מראה אמין ומסר שמוביל לפנייה.</p>
+          <a class="project-panel project-nad" href="https://nadlanistzafon.co.il/" target="_blank" rel="noopener">
+            <div class="project-visual"><img src="NAD.png" alt="צילום מסך של אתר נדלניסט צפון" loading="lazy" decoding="async"></div>
+            <div class="project-meta">
+              <span>נדלניסט צפון</span>
+              <p>נוכחות מקצועית לעסק נדל״ן, עם מראה אמין ומסר שמוביל לפנייה.</p>
             </div>
           </a>
 
-          <a href="https://hanukapol-7bcf38e7.base44.app/" target="_blank" rel="noopener" class="work-card reveal" aria-label="צפייה באתר MONO">
-            <div class="work-card-inner">
-              <img src="MONO.png" alt="צילום מסך של אתר MONO" class="work-image">
-              <div class="work-overlay">צפו באתר</div>
-            </div>
-            <div class="work-info">
-              <span class="work-tag">אתר פעיל</span>
-              <h3 class="work-title">MONO</h3>
-              <p class="work-desc">חוויה נקייה וממוקדת שמדגישה את התוכן ומרגישה קלה לשימוש.</p>
+          <a class="project-panel project-mono" href="https://hanukapol-7bcf38e7.base44.app/" target="_blank" rel="noopener">
+            <div class="project-visual"><img src="MONO.png" alt="צילום מסך של אתר MONO" loading="lazy" decoding="async"></div>
+            <div class="project-meta">
+              <span>MONO</span>
+              <p>חוויה נקייה וממוקדת שמדגישה את התוכן ומרגישה קלה לשימוש.</p>
             </div>
           </a>
         </div>
-
-        <div class="gallery-dots" aria-hidden="true">
-          <span class="active"></span>
-          <span></span>
-          <span></span>
-        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <section class="result dark-scene" id="result" data-scene="return" aria-labelledby="result-title">
+      <div class="result-orbit" aria-hidden="true"><span></span><i></i></div>
+      <div class="return-room" aria-hidden="true">
+        <img class="return-still" src="assets/images/cinematic/studio-wide.webp" alt="" width="1672" height="941" loading="lazy" decoding="async">
+        <span class="return-screen"></span>
+        <span class="return-person"></span>
+        <i class="return-light"></i>
+      </div>
+      <div class="result-copy">
+        <h2 id="result-title">מה יוצא בסוף?</h2>
+        <p class="result-lead">אתר שנשמע כמוכם. שנראה כמוכם ומדבר כמוכם.</p>
+        <p>אז אם הוא עושה קולות של ברווז, נראה כמו ברווז וקופץ כמו ברווז מה הוא? ברווז.</p>
+        <div class="you-reveal">
+          <strong>אתם.</strong>
+          <span>רק באתר.</span>
+        </div>
+        <p>וכן, הוא נבנה בעזרת AI.</p>
+        <p class="invisible-ai">פשוט לא רואים עליו.</p>
+      </div>
+    </section>
 
-  <section class="lead-form" id="contact" aria-labelledby="contact-title">
-    <div class="section-inner">
-      <div class="cta-box reveal">
-        <h2 class="cta-title" id="contact-title">
-          לא צריך מהפכה.<br>
-          <span>פשוט אתר טוב.</span>
-        </h2>
+    <section class="finale light-scene" id="contact" data-scene="action" aria-labelledby="finale-title">
+      <div class="finale-grid">
+        <div class="finale-copy">
+          <h2 id="finale-title">לא צריך לבנות אימפריה.</h2>
+          <p class="finale-lead">לפעמים צריך רק דף אחד טוב.</p>
+          <p>דף שמסביר מי אתם, מציג את העבודה שלכם ונותן ללקוח דרך פשוטה להזמין תור, להשאיר פרטים או ליצור קשר.</p>
+          <p>ואם צריך יותר מדף אחד — נבנה יותר מדף אחד.</p>
+          <p>בואו נתחיל מהעסק שלכם, ונבין איזה אתר באמת מתאים לו.</p>
+          <a class="final-cta" href="https://wa.me/972548461204" target="_blank" rel="noopener">בואו נדבר על האתר שלכם</a>
+          <div class="final-note">
+            <p>בלי התחייבות ובלי שאלון באורך הגלות.</p>
+            <p>ספרו לי בקצרה מה אתם עושים — ומשם נתקדם.</p>
+          </div>
+        </div>
 
-        <p class="section-sub lead-intro">
-          רוב בעלי העסקים לא צריכים מערכת חללית. הם פשוט צריכים אתר שלא מביך לשלוח, שנראה רציני, ושעושה חשק להישאר. אם בא לכם לבנות משהו כזה - אני פה 🙂
-        </p>
-
-        <form class="form" action="https://formspree.io/f/mdabebab" method="POST" data-contact-endpoint="https://boau-contact.l0548461204.workers.dev">
+        <form class="contact-form" id="contact-form" action="https://formspree.io/f/mdabebab" method="POST" data-contact-endpoint="https://boau-contact.l0548461204.workers.dev">
           <input type="hidden" name="_subject" value="פנייה חדשה מאתר בואו">
           <input type="hidden" name="source" value="boau-homepage">
           <input class="form-honeypot" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
 
-          <div class="form-field">
-            <label class="sr-only" for="name">שם מלא</label>
-            <input id="name" type="text" name="name" placeholder="שם מלא" autocomplete="name" required>
+          <label for="name">שם מלא</label>
+          <input id="name" type="text" name="name" autocomplete="name" required>
+
+          <div class="form-split">
+            <div>
+              <label for="phone">טלפון</label>
+              <input id="phone" type="tel" name="phone" autocomplete="tel" required>
+            </div>
+            <div>
+              <label for="email">כתובת מייל</label>
+              <input id="email" type="email" name="email" autocomplete="email" required>
+            </div>
           </div>
 
-          <div class="form-field form-field-split">
-            <label class="sr-only" for="phone">טלפון</label>
-            <input id="phone" type="tel" name="phone" placeholder="טלפון" autocomplete="tel" required>
+          <label for="message">ספרו לי בקצרה על העסק</label>
+          <textarea id="message" name="message" rows="5"></textarea>
 
-            <label class="sr-only" for="email">כתובת מייל</label>
-            <input id="email" type="email" name="email" placeholder="כתובת מייל" autocomplete="email" required>
-          </div>
-
-          <div class="form-field">
-            <label class="sr-only" for="message">ספרו לי בקצרה על העסק</label>
-            <textarea id="message" name="message" placeholder="ספרו לי בקצרה על העסק (לא חובה)"></textarea>
-          </div>
-          
           <label class="privacy-check">
             <input type="checkbox" required>
-            <span>
-              אני מאשר/ת את
-              <a href="privacy.html" target="_blank" rel="noopener">מדיניות הפרטיות</a>
-              ומסכים/ה להשארת הפרטים לצורך יצירת קשר בלבד.
-            </span>
+            <span>אני מאשר/ת את <a href="privacy.html" target="_blank" rel="noopener">מדיניות הפרטיות</a> ומסכים/ה להשארת הפרטים לצורך יצירת קשר בלבד.</span>
           </label>
-          
-          <button type="submit" class="btn-primary">דברו איתי</button>
 
-          <p class="form-note">
-            בלי התחייבות | בלי לחץ | אחזור אליכם בהקדם
-          </p>
+          <button type="submit">בואו נדבר על האתר שלכם</button>
           <p class="form-status" aria-live="polite"></p>
         </form>
       </div>
-    </div>
-  </section>
-</main>
+      <div class="finale-mark" aria-hidden="true">בּוֹאוּ</div>
+    </section>
+  </main>
 
-<footer>
-  <div class="footer-logo">בּוֹאוּ</div>
-  <p class="footer-copy">© <span id="year">2026</span> יוסי - בניית אתרים בעזרת AI. כל הזכויות שמורות.</p>
-</footer>
+  <footer class="site-footer">
+    <a class="brand" href="#top">בּוֹאוּ</a>
+    <a href="privacy.html">מדיניות הפרטיות</a>
+  </footer>
 
-<script src="assets/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
