@@ -198,42 +198,30 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   text-wrap: balance;
 }
 .opening-summary {
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(260px, .55fr);
-  grid-template-rows: auto auto;
-  gap: clamp(1.5rem, 4vw, 5rem);
-  width: min(calc(100% - 2 * var(--gutter)), var(--max));
+  display: block;
+  width: min(calc(100% - 2 * var(--gutter)), 820px);
   height: max-content;
   margin: auto;
   padding-block: calc(var(--header-h) + 2rem) 3rem;
   opacity: 0;
   visibility: hidden;
 }
-.opening-summary > div { align-self: center; }
-.opening-summary p { margin: 0; text-wrap: pretty; }
-.summary-prompt { grid-column: 1; grid-row: 1 / 3; max-width: 850px; }
-.summary-prompt p {
-  font-size: clamp(2rem, 4.4vw, 5.4rem);
-  line-height: 1.03;
-  letter-spacing: -.055em;
-  font-weight: 700;
+.opening-summary p,
+.opening-summary strong {
+  display: block;
+  margin: 0;
+  font-size: clamp(1.2rem, 1.8vw, 1.55rem);
+  line-height: 1.65;
+  letter-spacing: 0;
+  font-weight: 500;
+  text-wrap: pretty;
 }
-.summary-result { grid-column: 2; grid-row: 1; padding-top: 2rem; border-top: 1px solid var(--ink); }
+.opening-summary > div + div { margin-top: 1.35rem; }
 .summary-result p { color: var(--muted); }
-.summary-result strong { display: block; font-size: clamp(3.7rem, 8vw, 8rem); line-height: .9; letter-spacing: -.08em; }
-.summary-pretty { grid-column: 2; grid-row: 2; font-size: 1.15rem; }
-.summary-pretty p + p { margin-top: .4rem; }
-.summary-flat {
-  grid-column: 1 / -1;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: .8rem 2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--line);
-}
-.summary-flat p { font-size: clamp(1rem, 1.7vw, 1.4rem); }
-.summary-flat p:last-child { font-weight: 800; color: var(--accent); }
+.summary-result strong { color: var(--accent); }
+.summary-pretty p + p,
+.summary-flat p + p { margin-top: .15rem; }
+.summary-flat p:last-child { color: var(--ink); font-weight: 500; }
 .hero-scroll {
   position: absolute;
   bottom: 1.5rem; right: 50%;
@@ -500,12 +488,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .scene-nav > a:first-child { display: none; }
   .header-cta { min-height: 39px; padding: .55rem .8rem; font-size: .75rem !important; }
   .opening-story { min-height: 430vh; }
-  .opening-summary { grid-template-columns: 1fr; grid-template-rows: auto; gap: 1.6rem; align-content: center; }
-  .summary-prompt, .summary-result, .summary-pretty, .summary-flat { grid-column: 1; grid-row: auto; }
-  .summary-prompt p { font-size: clamp(1.8rem, 7vw, 3.5rem); }
-  .summary-result { display: flex; align-items: baseline; gap: 1rem; padding-top: 1rem; }
-  .summary-result strong { font-size: 4rem; }
-  .summary-flat { display: grid; grid-template-columns: 1fr 1fr; }
+  .opening-summary { width: min(calc(100% - 2 * var(--gutter)), 720px); }
   .disconnect { min-height: 205vh; }
   .reveal-kicker, .split-sentence { width: 100%; }
   .split-sentence p { font-size: clamp(2.7rem, 11vw, 6rem); }
@@ -525,7 +508,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   body { font-size: 16px; }
   .hero-copy h1 { font-size: clamp(3.35rem, 17vw, 5.8rem); }
   .hero-lead { max-width: 90%; }
-  .summary-flat { grid-template-columns: 1fr; gap: .35rem; }
   .digital-interior { inset: 14% 1.2rem; }
   .editorial-copy .hard-stop { margin-block: 18vh; }
   .bridge { padding-block: 5vh 20vh; }
@@ -560,4 +542,95 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .opening-summary { position: relative; opacity: 1; visibility: visible; padding-block: 8rem; }
   .projects-pin { display: block; padding-block: 10rem; }
   .projects-track { width: auto; display: grid; padding: 12rem var(--gutter) 0; }
+}
+
+/* Natural document flow: scrolling only reveals the content below. */
+.natural-scroll .cinematic-journey::before {
+  transform: scaleY(1);
+  opacity: .38;
+}
+.natural-scroll .opening-story,
+.natural-scroll .disconnect,
+.natural-scroll .projects,
+.natural-scroll .result {
+  min-height: auto;
+}
+.natural-scroll .opening-stage,
+.natural-scroll .disconnect-sticky,
+.natural-scroll .projects-pin {
+  position: relative;
+  top: auto;
+  min-height: auto;
+  overflow: visible;
+}
+.natural-scroll .opening-stage { display: block; }
+.natural-scroll .opening-panel {
+  position: relative;
+  inset: auto;
+}
+.natural-scroll .opening-intro {
+  min-height: 100dvh;
+}
+.natural-scroll .opening-summary {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  padding-block: 14vh 22vh;
+}
+.natural-scroll .hero-scroll { display: none; }
+.natural-scroll .disconnect-sticky {
+  min-height: 100dvh;
+}
+.natural-scroll .digital-interior {
+  clip-path: inset(0);
+}
+.natural-scroll .reveal-kicker,
+.natural-scroll .split-sentence,
+.natural-scroll .editorial-copy > p,
+.natural-scroll .bridge > div,
+.natural-scroll .craft h2,
+.natural-scroll .craft-card,
+.natural-scroll .craft-card > *,
+.natural-scroll .process h2,
+.natural-scroll .process-step,
+.natural-scroll .result-copy > *,
+.natural-scroll .finale-copy > *,
+.natural-scroll .contact-form,
+.natural-scroll .finale-mark {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+.natural-scroll .process-rail span { transform: scaleY(1); }
+.natural-scroll .projects {
+  padding: 24vh var(--gutter) 22vh;
+  background: var(--ink);
+}
+.natural-scroll .projects-pin { display: block; }
+.natural-scroll .projects-heading {
+  position: relative;
+  inset: auto;
+  width: min(100%, var(--max));
+  margin-inline: auto;
+  margin-bottom: 12vh;
+}
+.natural-scroll .projects-progress { display: none; }
+.natural-scroll .projects-track {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(2rem, 4vw, 5rem);
+  width: min(100%, var(--max));
+  margin-inline: auto;
+  padding: 0;
+  transform: none !important;
+}
+.natural-scroll .project-panel { width: auto; }
+.natural-scroll .project-visual { height: clamp(280px, 38vw, 520px); }
+.natural-scroll .project-meta { grid-template-columns: 1fr; gap: .45rem; }
+.natural-scroll .result { padding-block: 34vh; }
+
+@media (max-width: 980px) {
+  .natural-scroll .projects-track { grid-template-columns: 1fr; }
+  .natural-scroll .project-panel { width: 100%; }
+  .natural-scroll .project-visual { height: min(62vh, 560px); }
 }
