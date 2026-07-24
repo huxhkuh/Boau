@@ -274,7 +274,7 @@
 
   const revealTargets = [
     ...document.querySelectorAll(".reveal"),
-    ...document.querySelectorAll(".process-list article, .project")
+    ...document.querySelectorAll(".process-list article")
   ];
   if (reduceMotion || !("IntersectionObserver" in window)) {
     revealTargets.forEach((element) => element.classList.add("is-visible"));
@@ -291,6 +291,109 @@
       revealObserver.observe(element);
     });
   }
+
+  function setupProjectsCarousel() {
+    const carousel = document.querySelector("[data-projects-carousel]");
+    if (!carousel) return;
+
+    const track = carousel.querySelector(".projects-collage");
+    const slides = [...carousel.querySelectorAll(".project")];
+    const previousButton = carousel.querySelector("[data-project-prev]");
+    const nextButton = carousel.querySelector("[data-project-next]");
+    const currentLabel = carousel.querySelector("[data-project-current]");
+    const status = carousel.querySelector(".projects-status");
+    if (slides.length < 2 || !track || !previousButton || !nextButton || !currentLabel || !status) return;
+
+    let activeIndex = Math.max(0, slides.findIndex((slide) => slide.classList.contains("is-active")));
+    let timerId = 0;
+    let hovered = false;
+    let focusWithin = false;
+    let pointerStartX = null;
+
+    const restartGif = (slide) => {
+      const image = slide.querySelector(".monitor img");
+      if (!image) return;
+      const originalSrc = image.dataset.originalSrc || image.getAttribute("src");
+      const replacement = image.cloneNode(false);
+      replacement.dataset.originalSrc = originalSrc;
+      replacement.src = originalSrc;
+      image.replaceWith(replacement);
+    };
+
+    const scheduleNext = () => {
+      window.clearTimeout(timerId);
+      if (reduceMotion || hovered || focusWithin || document.hidden) return;
+      const duration = Number(slides[activeIndex].dataset.duration) || 8000;
+      timerId = window.setTimeout(() => showSlide(activeIndex + 1, false), duration);
+    };
+
+    const showSlide = (nextIndex, announce) => {
+      activeIndex = (nextIndex + slides.length) % slides.length;
+      slides.forEach((slide, index) => {
+        const isActive = index === activeIndex;
+        slide.classList.toggle("is-active", isActive);
+        slide.setAttribute("aria-hidden", String(!isActive));
+        if (isActive) slide.removeAttribute("tabindex");
+        else slide.setAttribute("tabindex", "-1");
+      });
+      track.style.transform = `translate3d(-${activeIndex * 100}%, 0, 0)`;
+      status.setAttribute("aria-live", announce ? "polite" : "off");
+      currentLabel.textContent = String(activeIndex + 1).padStart(2, "0");
+      restartGif(slides[activeIndex]);
+      scheduleNext();
+    };
+
+    previousButton.addEventListener("click", () => showSlide(activeIndex - 1, true));
+    nextButton.addEventListener("click", () => showSlide(activeIndex + 1, true));
+
+    carousel.addEventListener("mouseenter", () => {
+      hovered = true;
+      window.clearTimeout(timerId);
+    });
+    carousel.addEventListener("mouseleave", () => {
+      hovered = false;
+      scheduleNext();
+    });
+    carousel.addEventListener("focusin", () => {
+      focusWithin = true;
+      window.clearTimeout(timerId);
+    });
+    carousel.addEventListener("focusout", () => {
+      window.setTimeout(() => {
+        if (carousel.contains(document.activeElement)) return;
+        focusWithin = false;
+        scheduleNext();
+      }, 0);
+    });
+    carousel.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        showSlide(activeIndex + 1, true);
+      }
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        showSlide(activeIndex - 1, true);
+      }
+    });
+    carousel.addEventListener("pointerdown", (event) => {
+      pointerStartX = event.clientX;
+    }, { passive: true });
+    carousel.addEventListener("pointerup", (event) => {
+      if (pointerStartX === null) return;
+      const distance = event.clientX - pointerStartX;
+      pointerStartX = null;
+      if (Math.abs(distance) < 48) return;
+      showSlide(activeIndex + (distance < 0 ? 1 : -1), true);
+    }, { passive: true });
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) window.clearTimeout(timerId);
+      else scheduleNext();
+    });
+
+    showSlide(activeIndex, false);
+  }
+
+  setupProjectsCarousel();
 
   function wait(milliseconds) {
     return new Promise((resolve) => window.setTimeout(resolve, milliseconds));
