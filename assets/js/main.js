@@ -373,39 +373,13 @@
     }
   }
 
-  function runIterationReel() {
-    const reel = document.querySelector(".iteration-reel");
-    if (!reel) return;
-    const images = [...reel.querySelectorAll("img")];
-    const count = reel.querySelector(".reel-count");
-    if (!images.length || !count) return;
-
-    let index = 0;
-    let intervalId = 0;
-    const advance = () => {
-      images[index].classList.remove("is-active");
-      index = (index + 1) % images.length;
-      images[index].classList.add("is-active");
-      count.textContent = `${String(index + 1).padStart(2, "0")} / ${String(images.length).padStart(2, "0")}`;
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting && !intervalId) {
-        intervalId = window.setInterval(advance, 275);
-      } else if (!entries[0].isIntersecting && intervalId) {
-        window.clearInterval(intervalId);
-        intervalId = 0;
-      }
-    }, { threshold: .2 });
-    observer.observe(reel);
-  }
-
   if (!reduceMotion) {
     runEditorLoop();
     runWordLoop();
-    runIterationReel();
   } else {
     const label = document.querySelector(".screen-state");
     if (label) label.textContent = "אחרי";
+    const iterationVideo = document.querySelector(".iteration-video video");
+    if (iterationVideo) iterationVideo.pause();
   }
 })();
