@@ -300,8 +300,8 @@ body.hero-opening .site-header {
 .section-number { display: inline-flex; align-items: center; margin-bottom: 1.35rem; padding: .38rem .78rem; border-radius: 999px; color: white; background: var(--coral); font-size: .7rem; font-weight: 800; letter-spacing: .04em; }
 .section-number::before { content: ""; width: 7px; aspect-ratio: 1; margin-left: .5rem; border-radius: 50%; background: currentColor; animation: dot-pulse 1.8s ease-in-out infinite; }
 .section h2 { margin-bottom: 3.5rem; font-family: "Frank Ruhl Libre", serif; font-size: clamp(3rem, 6.7vw, 6.8rem); font-weight: 700; line-height: .94; letter-spacing: -.065em; text-wrap: balance; }
-.story, .bridge, .craft, .process, .contact { border-top: 2px solid rgba(184,79,42,.28); }
-.story::before, .craft::before, .process::before {
+.story, .bridge, .craft, .process, .pricing, .contact { border-top: 2px solid rgba(184,79,42,.28); }
+.story::before, .craft::before, .process::before, .pricing::before {
   content: "";
   position: absolute;
   z-index: 0;
@@ -313,8 +313,8 @@ body.hero-opening .site-header {
   background: var(--coral);
 }
 .reveal { opacity: 1; transform: none; }
-.js-ready .reveal, .js-ready .process-list article, .js-ready .project { opacity: 0; transform: translateY(24px); transition: opacity .72s ease var(--reveal-delay, 0ms), transform .72s cubic-bezier(.2,.8,.2,1) var(--reveal-delay, 0ms); will-change: opacity, transform; }
-.js-ready .reveal.is-visible, .js-ready .process-list article.is-visible, .js-ready .project.is-visible { opacity: 1; transform: translateY(0); }
+.js-ready .reveal, .js-ready .process-list article { opacity: 0; transform: translateY(24px); transition: opacity .72s ease var(--reveal-delay, 0ms), transform .72s cubic-bezier(.2,.8,.2,1) var(--reveal-delay, 0ms); will-change: opacity, transform; }
+.js-ready .reveal.is-visible, .js-ready .process-list article.is-visible { opacity: 1; transform: translateY(0); }
 
 .hero { padding: 100px var(--gutter) 2rem; }
 .hero-frame { position: relative; width: min(100%, 1500px); margin-inline: auto; overflow: hidden; border: 1px solid rgba(24, 33, 38, .12); border-radius: var(--radius-xl); background: #eadfce; isolation: isolate; }
@@ -483,15 +483,44 @@ body.hero-opening .site-header {
 .process-refine > i { position: absolute; top: 21%; right: 11%; width: 2px; height: 18px; border-radius: 999px; background: var(--coral); animation: refine-caret 3.2s steps(1,end) infinite; }
 .process-refine > em { position: absolute; bottom: 12%; left: 12%; width: 46px; height: 24px; border: 2px solid var(--coral); border-radius: 50%; transform: rotate(-7deg); animation: orbit-breathe 2s ease-in-out infinite; }
 
+.pricing { overflow: hidden; background: var(--paper-deep); }
+.pricing-heading { margin-bottom: clamp(3.5rem, 7vw, 6.5rem); }
+.pricing-heading h2 { margin: 0; }
+.pricing-heading h2 span { color: var(--coral); }
+.pricing-list { border-top: 1px solid var(--ink); }
+.pricing-row { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: clamp(2rem, 6vw, 7rem); align-items: center; padding: clamp(2rem, 4vw, 3.7rem) 0; border-bottom: 1px solid rgba(43,43,43,.3); }
+.pricing-row::after { content: ""; position: absolute; right: 0; bottom: -2px; width: 0; height: 3px; border-radius: 999px; background: var(--coral); transition: width .55s cubic-bezier(.2,.8,.2,1); }
+.pricing-row:hover::after { width: 100%; }
+.pricing-name { display: grid; grid-template-columns: 42px minmax(0, 1fr); column-gap: 1rem; align-items: baseline; }
+.pricing-name > span { display: grid; place-items: center; width: 38px; aspect-ratio: 1; border: 1px solid var(--coral); border-radius: 50%; color: var(--coral-dark); font-family: "Karantina", sans-serif; font-size: 1.25rem; animation: edit-pulse 2.2s ease-in-out infinite; }
+.pricing-name h3 { margin: 0; font-family: "Frank Ruhl Libre", serif; font-size: clamp(2rem, 4vw, 4.4rem); line-height: 1; letter-spacing: -.05em; }
+.pricing-name p { grid-column: 2; max-width: 680px; margin: 1rem 0 0; color: var(--muted); font-size: 1rem; line-height: 1.75; }
+.pricing-name .pricing-time { width: fit-content; margin-top: .65rem; padding: .25rem .75rem; border: 1px solid var(--coral-soft); border-radius: 999px; color: var(--coral-dark); font-size: .75rem; font-weight: 700; }
+.pricing-price { display: grid; grid-template-columns: auto auto; align-items: end; justify-content: end; min-width: clamp(220px, 25vw, 340px); margin: 0; color: var(--ink); text-align: left; white-space: nowrap; }
+.pricing-price small { grid-column: 1 / -1; margin-bottom: -.35rem; color: var(--coral-dark); font-size: .78rem; font-weight: 800; }
+.pricing-price del { grid-column: 1 / -1; justify-self: start; margin-bottom: .65rem; color: var(--muted); font-family: "Frank Ruhl Libre", serif; font-size: clamp(1.3rem, 2vw, 1.8rem); font-weight: 700; text-decoration-color: var(--coral); text-decoration-thickness: 3px; }
+.pricing-price strong { font-family: "Frank Ruhl Libre", serif; font-size: clamp(3.2rem, 6vw, 6.4rem); font-weight: 800; line-height: .85; letter-spacing: -.07em; }
+.pricing-price b { margin: 0 0 .25rem .45rem; color: var(--coral); font-family: "Frank Ruhl Libre", serif; font-size: clamp(1.6rem, 2.4vw, 2.5rem); }
+.pricing-bottom { display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding-top: clamp(2rem, 4vw, 3.5rem); }
+.pricing-bottom p { max-width: 690px; margin: 0; color: var(--muted); }
+.pricing-bottom strong { color: var(--ink); font-family: "Frank Ruhl Libre", serif; font-size: 1.35rem; }
+.pricing-bottom .button { flex: 0 0 auto; }
+
 .projects { overflow: hidden; color: var(--paper-soft); background: var(--ink); }
 .projects .section-number { color: white; }
 .projects h2 { margin-bottom: 1rem; }
 .projects-intro { margin-bottom: 4rem; color: #bbb5ac; }
-.projects-collage { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(2.5rem, 5vw, 5.5rem) clamp(1.5rem, 3vw, 3rem); align-items: start; }
-.project { position: relative; display: block; padding: clamp(1rem, 2vw, 1.5rem); overflow: hidden; border: 1px solid rgba(255,255,255,.13); border-radius: var(--radius-xl); background: rgba(255,255,255,.025); transition: transform .3s ease, border-color .3s ease; }
-.project:hover { border-color: rgba(232,157,116,.55); transform: translateY(-7px); }
-.project-device { position: relative; min-height: clamp(340px, 33vw, 500px); padding: 1rem 0 5.8rem; }
-.monitor { position: relative; z-index: 3; width: 92%; margin-inline: auto; padding: 13px; border-radius: 28px; background: #0d1112; }
+.projects-carousel { position: relative; width: 100vw; margin-inline: calc(50% - 50vw); overflow: hidden; touch-action: pan-y; }
+.projects-collage { display: flex; width: 100%; direction: ltr; transition: transform .82s cubic-bezier(.72,0,.18,1); will-change: transform; }
+.project { position: relative; display: grid; flex: 0 0 100%; grid-template-columns: minmax(0, 1.45fr) minmax(300px, .55fr); align-items: center; min-width: 100%; min-height: 100svh; padding: clamp(3rem, 6vw, 7rem); padding-bottom: clamp(7.5rem, 11vw, 10rem); overflow: hidden; direction: rtl; background: #172124; }
+.project[aria-hidden="true"] { pointer-events: none; }
+.project.is-active { pointer-events: auto; }
+.project-account { background: #172124; }
+.project-tehilim { background: #241f1c; }
+.project-nad { background: #19231f; }
+.project-nissan { background: #252019; }
+.project-device { position: relative; min-height: min(72svh, 760px); padding: 1rem 0 6.5rem; }
+.monitor { position: relative; z-index: 3; width: min(94%, 920px); margin-inline: auto; padding: 13px; border-radius: 28px; background: #0d1112; }
 .monitor::after { content: ""; position: absolute; bottom: 4px; left: 50%; width: 5px; aspect-ratio: 1; border-radius: 50%; background: var(--coral); transform: translateX(-50%); animation: dot-pulse 1.8s ease-in-out infinite; }
 .monitor img { display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: 17px; object-fit: cover; object-position: top; transition: transform .7s ease; }
 .project:hover .monitor img { transform: scale(1.015); }
@@ -501,9 +530,15 @@ body.hero-opening .site-header {
 .keyboard::before { content: ""; position: absolute; inset: 9px; border-radius: 12px; opacity: .28; background-image: repeating-linear-gradient(90deg, transparent 0 16px, rgba(255,255,255,.38) 16px 18px), repeating-linear-gradient(0deg, transparent 0 11px, rgba(255,255,255,.35) 11px 13px); }
 .keyboard strong { position: absolute; z-index: 2; right: 50%; bottom: 10px; width: max-content; color: #ffd7c3; font-family: "Frank Ruhl Libre", serif; font-size: clamp(.78rem, 1.25vw, 1.05rem); text-shadow: 0 0 6px rgba(255,140,88,.9), 0 0 16px rgba(211,94,53,.75); transform: translateX(50%) rotateX(-18deg); animation: keyboard-glow 2s ease-in-out infinite; }
 .keyboard span { position: absolute; inset: auto 18% 5px; height: 3px; border-radius: 999px; background: var(--coral); box-shadow: 0 0 12px var(--coral); animation: line-run 2.4s ease-in-out infinite; }
-.project > span { display: grid; grid-template-columns: 1fr; gap: .65rem; padding: 1.4rem .4rem .3rem; border-top: 1px solid rgba(255,255,255,.12); }
-.project b { font-family: "Frank Ruhl Libre", serif; font-size: clamp(1.55rem, 2.3vw, 2.25rem); }.project small { grid-column: 1 / -1; color: #c7c1b8; font-size: 1rem; line-height: 1.75; }.project > span > i { color: var(--coral-soft); font-size: .78rem; font-style: normal; }
-.project-account, .project-tehilim, .project-nad, .project-nissan { grid-column: auto; margin-top: 0; transform: none; }
+.project > span { display: grid; grid-template-columns: 1fr; align-content: center; gap: 1.1rem; min-height: 72%; padding: clamp(2rem, 4vw, 4.5rem); border-right: 1px solid rgba(255,255,255,.16); }
+.project b { font-family: "Frank Ruhl Libre", serif; font-size: clamp(2.3rem, 4vw, 4.5rem); line-height: 1; letter-spacing: -.045em; }.project small { grid-column: 1 / -1; color: #c7c1b8; font-size: clamp(1rem, 1.25vw, 1.15rem); line-height: 1.8; }.project > span > i { color: var(--coral-soft); font-size: .82rem; font-style: normal; }
+.projects-controls { position: absolute; z-index: 5; bottom: clamp(1.5rem, 3vw, 2.5rem); left: 50%; display: flex; align-items: center; justify-content: center; gap: 1rem; margin: 0; padding: .6rem .8rem; border: 1px solid rgba(255,255,255,.14); border-radius: 999px; background: rgba(13,17,18,.78); transform: translateX(-50%); }
+.project-arrow { display: grid; place-items: center; width: 54px; aspect-ratio: 1; border: 1px solid rgba(255,255,255,.28); border-radius: 50%; color: var(--paper-soft); background: transparent; cursor: pointer; transition: color .2s ease, background .2s ease, border-color .2s ease, transform .2s ease; }
+.project-arrow:hover { border-color: var(--coral-soft); color: var(--ink); background: var(--coral-soft); transform: scale(1.06); }
+.project-arrow span { display: inline-block; font-size: 1.5rem; line-height: 1; animation: arrow-poke 1.4s ease-in-out infinite; }
+.project-prev span { animation-direction: reverse; }
+.projects-status { display: flex; align-items: baseline; gap: .35rem; min-width: 82px; margin: 0; direction: ltr; justify-content: center; color: #8f8b84; font-family: "Frank Ruhl Libre", serif; }
+.projects-status strong { color: var(--coral-soft); font-size: 2rem; line-height: 1; }
 
 .result { display: grid; place-items: center; min-height: 82svh; text-align: center; background: #eee4d5; }
 .result-copy { display: grid; justify-items: center; width: min(100%, 980px); }
@@ -672,7 +707,12 @@ body.hero-opening .site-header {
   .iteration-video { width: 100%; }
   .process-list article { grid-template-columns: 76px minmax(0, 1fr); }
   .process-visual { grid-column: 2; width: min(100%, 360px); }
-  .project-account, .project-tehilim, .project-nad, .project-nissan { grid-column: auto; }
+  .pricing-row { grid-template-columns: 1fr; gap: 1.6rem; }
+  .pricing-price { justify-content: start; padding-right: 58px; text-align: right; }
+  .pricing-bottom { align-items: flex-start; flex-direction: column; }
+  .project { grid-template-columns: 1fr; min-height: 100svh; padding: 4rem 1.25rem 8rem; align-content: center; }
+  .project-device { min-height: min(50svh, 480px); }
+  .project > span { min-height: 0; padding: 2rem 1rem; border-top: 1px solid rgba(255,255,255,.12); border-right: 0; }
   .contact-stage { min-height: 0; }
   .contact-stage > img { position: relative; height: 330px; object-position: left center; }
   .contact-content { width: 100%; min-height: 0; padding: 2.3rem 1.3rem; background: var(--paper-deep); }
@@ -720,9 +760,18 @@ body.hero-opening .site-header {
   .process-list article > b { width: 50px; }
   .process-visual { grid-column: 2; }
   .mini-diff { border-radius: var(--radius-md); }
-  .projects-collage { display: flex; flex-direction: column; }
-  .project { width: 100%; margin: 0 0 1.5rem; transform: none; }
-  .project-device { min-height: 310px; }
+  .pricing-heading { margin-bottom: 3rem; }
+  .pricing-row { padding-block: 2.2rem; }
+  .pricing-name { grid-template-columns: 34px minmax(0, 1fr); column-gap: .8rem; }
+  .pricing-name > span { width: 32px; }
+  .pricing-name h3 { font-size: clamp(2rem, 10vw, 3rem); }
+  .pricing-name p { grid-column: 1 / -1; }
+  .pricing-price { min-width: 0; padding-right: 0; }
+  .pricing-price strong { font-size: clamp(3.8rem, 19vw, 5.6rem); }
+  .project { min-height: 100svh; padding-inline: 1rem; }
+  .project-device { min-height: 360px; }
+  .project > span { padding-inline: .25rem; }
+  .project b { font-size: clamp(2.25rem, 12vw, 3.5rem); }
   .monitor { width: 100%; padding: 9px; border-radius: 22px; }
   .monitor img { border-radius: 14px; }
   .contact-stage > img { height: 250px; }
