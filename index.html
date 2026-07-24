@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;600;700;800;900&amp;family=Heebo:wght@400;500;600;700;800;900&amp;family=Karantina:wght@400;700&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20260724-4">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260724-6">
 </head>
 <body>
   <a class="skip-link" href="#story">דלגו לתוכן</a>
@@ -67,34 +67,37 @@
         <div class="story-copy">
           <p class="section-number">01 — הטיוטה</p>
           <h2 id="story-title">עדיין בונים היום אתרים?</h2>
-          <p class="story-opening reveal">רגע, אבל היום הרי אפשר להיכנס לכלי AI, לכתוב „תבנה לי אתר ליועץ משכנתאות”, ולחכות כמה דקות. ומקבלים אתר</p>
+          <div class="story-flow">
+            <p class="story-opening reveal">רגע, אבל היום הרי אפשר להיכנס לכלי AI, לכתוב „תבנה לי אתר ליועץ משכנתאות”, ולחכות כמה דקות. ומקבלים אתר</p>
+            <div class="story-exchange reveal"><p>מה מקבלים?</p><strong>אתר.</strong></div>
+            <div class="story-center">
+              <div class="story-normal reveal"><p>הוא יכול להיות אפילו יפה.</p><p>הכפתורים במקום. התמונות יפות. הכול עובד.</p></div>
+              <div class="story-break reveal"><p>אבל הוא שטוח. מנומס מדי. מוכר מדי.</p><p>משהו לא עובד.</p><p>אנחנו לא יודעים להגיד למה.</p><p class="accent-line">אבל הוא לא משכנע, משהו שמה לא עובד, לא זז, לא מניע.</p></div>
+            </div>
+          </div>
         </div>
 
-        <div class="edit-sheet reveal" aria-label="דוגמה לעריכה אנושית של טקסט שנוצר באמצעות AI">
-          <p class="sheet-label">טיוטת AI</p>
-          <div class="edit-row"><del>ברוכים הבאים לעסק המוביל המספק פתרונות מקצועיים, חדשניים ואיכותיים.</del><span aria-hidden="true">←</span><ins>כאן תוכלו למצוא את הפיתרון לבעיה שהטרידה אתכם הרבה זמן.</ins></div>
-          <div class="edit-row"><del>כשהסטנדרט גבוה, לא צריך להתפשר.</del><span aria-hidden="true">←</span><ins>שירות. איכות. אחריות.</ins></div>
-        </div>
-
-        <div class="story-exchange reveal"><p>מה מקבלים?</p><strong>אתר.</strong></div>
-
-        <div class="story-center">
-          <div class="story-normal reveal"><p>הוא יכול להיות אפילו יפה.</p><p>הכפתורים במקום. התמונות יפות. הכול עובד.</p></div>
-          <div class="story-break reveal"><p>אבל הוא שטוח. מנומס מדי. מוכר מדי.</p><p>משהו לא עובד.</p><p>אנחנו לא יודעים להגיד למה.</p><p class="accent-line">אבל הוא לא משכנע, משהו שמה לא עובד, לא זז, לא מניע.</p></div>
-        </div>
+        <aside class="edit-demo reveal" aria-label="דוגמה לעריכה אנושית של טקסט שנוצר באמצעות AI">
+          <header><span>הדגמה</span><strong>כך טיוטת AI הופכת לטקסט אנושי</strong></header>
+          <div class="edit-sheet">
+            <p class="sheet-label">טיוטת AI ← עריכה אנושית</p>
+            <div class="edit-row"><del>ברוכים הבאים לעסק המוביל המספק פתרונות מקצועיים, חדשניים ואיכותיים.</del><span aria-hidden="true">←</span><ins>כאן תוכלו למצוא את הפיתרון לבעיה שהטרידה אתכם הרבה זמן.</ins></div>
+            <div class="edit-row"><del>כשהסטנדרט גבוה, לא צריך להתפשר.</del><span aria-hidden="true">←</span><ins>שירות. איכות. אחריות.</ins></div>
+          </div>
+        </aside>
       </div>
     </section>
 
     <section class="disconnect" aria-label="הפער בין אנשים למכונות">
       <div class="disconnect-inner">
         <p class="disconnect-kicker">אני יודע למה.</p>
+        <p class="disconnect-intro">כי יש הבדל בין אתר שפשוט נוצר — לבין אתר שמישהו באמת כתב למישהו.</p>
         <div class="disconnect-compare">
-          <div><small>אתר שנוצר אוטומטית</small><p>נשמע טוב.<br>אבל נשכח.</p></div>
-          <span class="soft-divider" aria-hidden="true"><i></i></span>
-          <div><small>אתר שנכתב על ידי אדם</small><p>נוגע בלב.<br>ונשאר.</p></div>
+          <div class="compare-side compare-auto"><small>אתר שנוצר אוטומטית</small><span class="compare-lines" aria-hidden="true"><i></i><i></i><i></i></span><p>נשמע טוב.<br>אבל נשכח.</p></div>
+          <span class="soft-divider" aria-hidden="true"><i></i><b>מול</b></span>
+          <div class="compare-side compare-human"><small>אתר שנכתב על ידי אדם</small><span class="compare-edit" aria-hidden="true"><del>עוד טקסט</del><ins>מילים עם כוונה</ins></span><p>נוגע בלב.<br>ונשאר.</p></div>
         </div>
-        <p class="disconnect-line">כי אנשים לא מדברים עם מכונות</p>
-        <p class="disconnect-line muted-line">ומכונות לא מדברות עם אנשים.</p>
+        <div class="disconnect-conclusion"><p class="disconnect-line">כי אנשים לא מדברים עם מכונות</p><p class="disconnect-line muted-line">ומכונות לא מדברות עם אנשים.</p></div>
       </div>
     </section>
 
@@ -124,7 +127,10 @@
           <div><span>אני כותב.</span><span>אני מעצב.</span><span>אני בודק מה מרגיש נכון ומה מרגיש כמו תבנית.</span></div>
           <p>ואני מכוון את הכלים שוב ושוב, עד שהאתר מפסיק להיראות כאילו מישהו כתב פרומפט (פרומפט זה ההנחיות של הAI) ולחץ על 'צור'</p>
         </div>
-        <div class="camera-analogy reveal"><span aria-hidden="true">◉</span><div><p>אפשר לבנות אתר לבד בעזרת AI.</p><p>יודעים מה? זה כמו לקנות מצלמה טובה במקום להזמין צלם לחתונה.</p></div></div>
+        <div class="camera-analogy reveal">
+          <div class="camera-visual" aria-hidden="true"><span class="camera-flash"></span><div class="camera-body"><i class="camera-top"></i><span class="camera-lens"><i></i></span><b class="camera-shutter"></b></div></div>
+          <div><p>אפשר לבנות אתר לבד בעזרת AI.</p><p>יודעים מה? זה כמו לקנות מצלמה טובה במקום להזמין צלם לחתונה.</p></div>
+        </div>
       </div>
     </section>
 
@@ -149,15 +155,10 @@
         </article>
 
         <article class="craft-row reverse">
-          <figure class="iteration-reel" aria-label="שש גרסאות של עיצוב שמתחלפות ברצף">
-            <img class="is-active" src="assets/images/iterations/iteration-1.jpg" alt="גרסה ראשונה של עיצוב האתר" width="1680" height="945" loading="lazy" decoding="async">
-            <img src="assets/images/iterations/iteration-2.jpg" alt="גרסה שנייה של עיצוב האתר" width="1680" height="945" loading="lazy" decoding="async">
-            <img src="assets/images/iterations/iteration-3.jpg" alt="גרסה שלישית של עיצוב האתר עם תיקוני עריכה" width="1680" height="945" loading="lazy" decoding="async">
-            <img src="assets/images/iterations/iteration-4.jpg" alt="גרסה רביעית של עיצוב האתר" width="1680" height="945" loading="lazy" decoding="async">
-            <img src="assets/images/iterations/iteration-5.jpg" alt="גרסה חמישית של עיצוב האתר" width="1680" height="945" loading="lazy" decoding="async">
-            <img src="assets/images/iterations/iteration-6.jpg" alt="הגרסה המדויקת של עיצוב האתר" width="1680" height="945" loading="lazy" decoding="async">
-            <span class="reel-count" aria-live="polite">01 / 06</span>
-            <span class="reel-label">גרסה בתנועה</span>
+          <figure class="iteration-video" aria-label="האתר הגנרי מתפרק ונבנה מחדש">
+            <video autoplay muted loop playsinline preload="metadata">
+              <source src="assets/videos/generic-site-build.mp4" type="video/mp4">
+            </video>
           </figure>
           <div><span class="craft-index">ב</span><h3>עיצוב שלא מרגיש משוכפל</h3><p class="feature-line">העסק שלכם הוא לא עסק אחר. הוא העסק שלכם</p><p>אין סיבה שהאתר שלו ייראה כמו כולם. הוא צריך את הקו שלו, הייחודי.</p><p>אני בונה לכל אתר שפה משלו, בקצב, בצבעים, בכותרות, בתנועה ובפרטים הקטנים שאי אפשר תמיד להסביר, אבל מרגישים מיד.</p></div>
         </article>
@@ -192,10 +193,10 @@
         <h2 id="projects-title">עבודות</h2>
         <p class="projects-intro">כמה אתרים שקיבלו שפה, קצב ואישיות משלהם.</p>
         <div class="projects-collage">
-          <a class="project project-account" href="https://xn--4dbbbobbm0ete.com/" target="_blank" rel="noopener"><img src="assets/images/projects/boau-account.gif" alt="האתר בואו חשבון בתנועה" loading="lazy" decoding="async"><span><b>בואו חשבון</b><small>אתר המנגיש ידע פיננסי, עיצוב מכובד ורציני. שנותן לכל אחד שנכנס לאתר את התחושה שהוא הגיע למקום הנכון.</small><i>לצפייה ←</i></span></a>
-          <a class="project project-tehilim" href="https://tahilim.netlify.app/" target="_blank" rel="noopener"><img src="assets/images/projects/tehilim.gif" alt="האתר שותפים לתהילים בתנועה" loading="lazy" decoding="async"><span><b>שותפים לתהילים</b><small>שותפים לתהילים: אתר שבו תוכלו לקבל קישור לאמירת תהילים לרפואה או להדפיס חוברת לבית הקברות.<br>עיצוב תואם לאווירה ולחשיבות.</small><i>לצפייה ←</i></span></a>
-          <a class="project project-nad" href="https://nadlanistzafon.co.il/" target="_blank" rel="noopener"><img src="assets/images/projects/nadlanist-north.gif" alt="האתר נדלניסט צפון בתנועה" loading="lazy" decoding="async"><span><b>נדלניסט צפון</b><small>אתר תיווך דירות באזור צפון הארץ.<br>מותאם במיוחד לציבור החרדי.<br>נבנה עם פיצ'רים כמו בוט AI ואפשרויות תשלום מאובטחות.</small><i>לצפייה ←</i></span></a>
-          <a class="project project-nissan" href="https://tipim-economic-game.huxh.chatgpt.site/" target="_blank" rel="noopener"><img src="assets/images/projects/money-challenge.gif" alt="אתגר הכסף הגדול בתנועה" loading="lazy" decoding="async"><span><b>אתגר הכסף הגדול</b><small>אתגר הכסף הגדול מבית טיפים לכלכה נבונה.<br>האמת היה ממש כיף לעבוד על הפרויקט הזה, משחק אינטראקטיבי מושך ומעניין עם פרסים בסופו.<br>עיצוב משחקי, אבל עדיין בוגר.<br>אתר שיכול לעבוד עם עומס משתמשים גבוה בו-זמנית. הוא נבנה הרי בדיוק בשביל זה.</small><i>לצפייה ←</i></span></a>
+          <a class="project project-account" href="https://xn--4dbbbobbm0ete.com/" target="_blank" rel="noopener"><div class="project-device" aria-hidden="true"><div class="monitor"><img src="assets/images/projects/boau-account.gif" alt=""></div><i class="monitor-neck"></i><i class="monitor-base"></i><div class="keyboard"><strong>בואו חשבון</strong><span></span></div></div><span><b>בואו חשבון</b><small>אתר המנגיש ידע פיננסי, עיצוב מכובד ורציני. שנותן לכל אחד שנכנס לאתר את התחושה שהוא הגיע למקום הנכון.</small><i>לצפייה ←</i></span></a>
+          <a class="project project-tehilim" href="https://tahilim.netlify.app/" target="_blank" rel="noopener"><div class="project-device" aria-hidden="true"><div class="monitor"><img src="assets/images/projects/tehilim.gif" alt=""></div><i class="monitor-neck"></i><i class="monitor-base"></i><div class="keyboard"><strong>שותפים לתהילים</strong><span></span></div></div><span><b>שותפים לתהילים</b><small>שותפים לתהילים: אתר שבו תוכלו לקבל קישור לאמירת תהילים לרפואה או להדפיס חוברת לבית הקברות.<br>עיצוב תואם לאווירה ולחשיבות.</small><i>לצפייה ←</i></span></a>
+          <a class="project project-nad" href="https://nadlanistzafon.co.il/" target="_blank" rel="noopener"><div class="project-device" aria-hidden="true"><div class="monitor"><img src="assets/images/projects/nadlanist-north.gif" alt=""></div><i class="monitor-neck"></i><i class="monitor-base"></i><div class="keyboard"><strong>נדלניסט צפון</strong><span></span></div></div><span><b>נדלניסט צפון</b><small>אתר תיווך דירות באזור צפון הארץ.<br>מותאם במיוחד לציבור החרדי.<br>נבנה עם פיצ'רים כמו בוט AI ואפשרויות תשלום מאובטחות.</small><i>לצפייה ←</i></span></a>
+          <a class="project project-nissan" href="https://tipim-economic-game.huxh.chatgpt.site/" target="_blank" rel="noopener"><div class="project-device" aria-hidden="true"><div class="monitor"><img src="assets/images/projects/money-challenge.gif" alt=""></div><i class="monitor-neck"></i><i class="monitor-base"></i><div class="keyboard"><strong>אתגר הכסף הגדול</strong><span></span></div></div><span><b>אתגר הכסף הגדול</b><small>אתגר הכסף הגדול מבית טיפים לכלכה נבונה.<br>האמת היה ממש כיף לעבוד על הפרויקט הזה, משחק אינטראקטיבי מושך ומעניין עם פרסים בסופו.<br>עיצוב משחקי, אבל עדיין בוגר.<br>אתר שיכול לעבוד עם עומס משתמשים גבוה בו-זמנית. הוא נבנה הרי בדיוק בשביל זה.</small><i>לצפייה ←</i></span></a>
         </div>
       </div>
     </section>
@@ -206,14 +207,13 @@
         <h2 id="result-title">אתר שנראה כמוכם.<br>שנשמע כמוכם ומרגיש שלכם.</h2>
         <p>המטרה פשוטה: שמישהו ייכנס לאתר, ותוך כמה שניות ירגיש שיש פה עסק אמיתי ואנשים אמיתיים.</p>
         <div class="you-reveal"><strong>אתם.</strong><span>רק באתר.</span></div>
-        <p>וכן, הוא נבנה בעזרת AI.</p>
-        <p class="invisible-ai">פשוט לא רואים עליו.</p>
+        <div class="result-tail"><p>וכן, הוא נבנה בעזרת AI.</p><p class="invisible-ai">פשוט לא רואים עליו.</p></div>
       </div>
     </section>
 
     <section class="contact section" id="contact" aria-labelledby="contact-title">
       <div class="contact-stage">
-        <img src="assets/images/editorial/contact-olive.webp" alt="אגרטל קרמי עם ענפי זית על שולחן עץ" width="1774" height="887" loading="lazy" decoding="async">
+        <img src="assets/images/editorial/contact-workbench.png" alt="שולחן עבודה חם עם לפטופ, מחברת עריכה וכוס קפה" width="1774" height="887" loading="lazy" decoding="async">
         <div class="contact-content">
           <div class="contact-copy">
             <p class="section-number">06 — בואו נדבר</p>
@@ -240,6 +240,6 @@
   </main>
 
   <footer class="site-footer"><a class="brand footer-brand" href="#top"><span class="brand-dot" aria-hidden="true"></span><span>בּוֹאוּ</span></a><p>אתרים עם מילים, עיצוב ואישיות.</p><a href="privacy.html">מדיניות הפרטיות</a></footer>
-  <script src="assets/js/main.js?v=20260724-3"></script>
+  <script src="assets/js/main.js?v=20260724-6"></script>
 </body>
 </html>
