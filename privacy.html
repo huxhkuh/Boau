@@ -1,58 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>מדיניות פרטיות - בואו</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700;800&family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>מדיניות פרטיות — בּוֹאוּ</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@600;700&amp;family=Heebo:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Rubik', sans-serif;
-      background: #0d0f12;
-      color: #f4efe4;
-      line-height: 1.9;
-      padding: 60px 24px;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    h1 {
-      font-family: 'Heebo', sans-serif;
-      font-size: 3rem;
-      margin-bottom: 30px;
-    }
-
-    p {
-      color: #c9c3b6;
-      margin-bottom: 20px;
-    }
-
-    a {
-      color: #8ecae6;
-    }
+    :root{--paper:#f4efe6;--soft:#fbf7f0;--ink:#182126;--muted:#6d675f;--coral:#d35e35;--line:#d6c8b8}
+    *{box-sizing:border-box}html{background:var(--paper)}body{min-width:320px;margin:0;padding:clamp(1rem,4vw,4rem);color:var(--ink);background:var(--paper);font-family:"Heebo",Arial,sans-serif;line-height:1.85}
+    a{color:inherit}.shell{width:min(100%,900px);margin:auto}.header{display:flex;align-items:center;justify-content:space-between;margin-bottom:clamp(2rem,6vw,5rem);padding:.7rem 1rem;border:1px solid var(--line);border-radius:999px;background:var(--soft)}
+    .brand{font-size:1.2rem;font-weight:800;text-decoration:none}.brand::before{content:"";display:inline-block;width:9px;aspect-ratio:1;margin-left:.55rem;border-radius:50%;background:var(--coral)}.back{padding:.55rem .9rem;border-radius:999px;color:white;background:var(--ink);font-size:.8rem;text-decoration:none}
+    main{padding:clamp(2rem,7vw,6rem);border:1px solid var(--line);border-radius:clamp(28px,5vw,52px);background:var(--soft)}h1{margin:0 0 2rem;font-family:"Frank Ruhl Libre",serif;font-size:clamp(3rem,8vw,6.5rem);line-height:1}.accent{color:var(--coral)}p{max-width:620px;margin:0 0 1rem;color:var(--muted);font-size:1.05rem}
+    a:focus-visible{outline:3px solid var(--coral);outline-offset:4px}@media(max-width:560px){.header{padding:.6rem}.back{font-size:.72rem}main{padding:2rem 1.25rem}}
   </style>
 </head>
 <body>
-
-<h1>מדיניות פרטיות</h1>
-
-<p>
-הפרטים שנשלחים דרך האתר משמשים לצורך יצירת קשר בלבד.
-</p>
-
-<p>
-לא ייעשה בפרטים שימוש נוסף, והם לא יועברו לצד שלישי.
-</p>
-
-<p>
-אם יש לכם שאלות בנושא פרטיות, ניתן ליצור קשר דרך האתר.
-</p>
-
-<p>
-<a href="index.html">חזרה לאתר</a>
-</p>
-
+  <div class="shell">
+    <header class="header"><a class="brand" href="index.html">בּוֹאוּ</a><a class="back" href="index.html">חזרה לאתר</a></header>
+    <main>
+      <h1>מדיניות <span class="accent">פרטיות.</span></h1>
+      <p>הפרטים שנשלחים דרך האתר משמשים לצורך יצירת קשר בלבד.</p>
+      <p>לא ייעשה בפרטים שימוש נוסף, והם לא יועברו לצד שלישי.</p>
+      <p>אם יש לכם שאלות בנושא פרטיות, ניתן ליצור קשר דרך האתר.</p>
+    </main>
+  </div>
 </body>
 </html>
