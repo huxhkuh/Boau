@@ -18,7 +18,7 @@
     if (!intro || !stage || !tearTop || !tearBottom || !reveal || !finalLayer || !hint || !typed || !finalContent) return;
 
     const phrases = [
-      "עם אישיות.",
+      "שמרגיש כמוכם.",
       "עם לב.",
       "שמרגיש כמוכם.",
       "שנבנה בדיוק עבורכם.",
