@@ -251,7 +251,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .intro-skip {
   position: absolute;
   z-index: 9;
-  top: 1.2rem;
+  top: 6rem;
   left: 1.2rem;
   padding: .7rem 1rem;
   border: 1px solid rgba(24,33,38,.2);
@@ -722,7 +722,7 @@ body.hero-opening .site-header {
 @media (max-width: 560px) {
   :root { --gutter: 1rem; --radius-xl: 36px; --radius-lg: 28px; }
   .site-header { padding-inline: .65rem; }
-  .intro-skip { top: .8rem; left: .8rem; }
+  .intro-skip { top: 5rem; left: .8rem; }
   .intro-scroll-hint { bottom: 20px; width: max-content; }
   .brand > span:not(.brand-dot) { font-size: 1.12rem; }
   .header-cta { font-size: .74rem; }
