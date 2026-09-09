@@ -35,12 +35,12 @@
   .welcome.is-animated h2 > :nth-child(n) { opacity: 1; transform: none; transition: none; }
 }
 .promise { padding: 96px var(--gutter); background: #e8eee9; }
-.promise-inner { max-width: 1080px; margin: auto; }
-.promise h2 { max-width: 780px; font: 700 72px/1.08 "Tel Aviv Modernist", sans-serif; letter-spacing: 0; margin-bottom: 64px; }
+.promise-inner { max-width: 1080px; margin: auto; text-align: center; }
+.promise h2 { max-width: 780px; font: 700 72px/1.08 "Tel Aviv Modernist", sans-serif; letter-spacing: 0; margin: 0 auto 64px; }
 .promise-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; }
 .promise-steps p { border-top: 1px solid #a8b7ac; padding-top: 24px; font-size: 27px; line-height: 1.5; font-weight: 650; }
 .promise-steps span { display: block; margin-top: 16px; font-size: 20px; font-weight: 400; color: #48594e; }
-.promise-finish { max-width: 850px; margin: 48px 0 32px; font: 500 48px/1.2 "Tel Aviv Modernist", sans-serif; }
+.promise-finish { max-width: 850px; margin: 48px auto 32px; font: 500 48px/1.2 "Tel Aviv Modernist", sans-serif; }
 .explore-links { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 48px; }
 .explore-link { min-width: 0; border: 1px solid #a8b7ac; border-radius: 8px; padding: 20px; background: #fcfcfa; transition: border-color .25s, background .25s; }
 .explore-link:hover, .explore-link:focus-visible { border-color: var(--coral); background: #fff; }
