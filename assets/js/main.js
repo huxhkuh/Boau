@@ -17,6 +17,20 @@
 
     if (!intro || !stage || !tearTop || !tearBottom || !reveal || !finalLayer || !hint || !typed || !finalContent) return;
 
+    const wordMeasure = document.createElement("canvas").getContext("2d");
+    function fitIntroWord() {
+      if (!wordMeasure) return;
+      wordMeasure.font = '700 100px "Tel Aviv Modernist"';
+      const metrics = wordMeasure.measureText("בוֹאוּ");
+      const width = Math.max(metrics.width, metrics.actualBoundingBoxLeft + metrics.actualBoundingBoxRight);
+      const height = metrics.actualBoundingBoxAscent + metrics.actualBoundingBoxDescent;
+      const size = Math.min(stage.clientWidth * .96 / width, stage.clientHeight * .8 / height) * 100;
+      stage.style.setProperty("--intro-word-size", `${size}px`);
+    }
+    fitIntroWord();
+    document.fonts.ready.then(fitIntroWord);
+    window.addEventListener("resize", fitIntroWord);
+
     const phrases = [
       "שמרגיש כמוכם.",
       "עם לב.",
@@ -236,7 +250,7 @@
         this.form.reset();
         this.setStatus("תודה, הפרטים נשלחו. אחזור אליכם בהקדם.");
       } catch (_) {
-        this.setStatus("לא הצלחתי לשלוח כרגע. אפשר לפנות אליי גם בוואטסאפ.", true);
+        this.setStatus("לא הצלחנו לשלוח כרגע. הפרטים נשמרו בטופס, נסו לשלוח שוב בעוד רגע.", true);
       } finally {
         this.button.disabled = false;
         this.button.innerHTML = original;
@@ -256,9 +270,24 @@
 
   const navLinks = [...document.querySelectorAll(".site-header nav a")];
   const navTargets = navLinks
+    .filter((link) => link.getAttribute("href")?.startsWith("#"))
     .map((link) => document.querySelector(link.getAttribute("href")))
     .filter(Boolean);
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const welcome = document.querySelector(".welcome");
+  if (welcome && !reduceMotion && "IntersectionObserver" in window) {
+    welcome.querySelectorAll("h2 > *").forEach((line, index) => {
+      line.style.setProperty("--line-delay", `${index * 140}ms`);
+    });
+    welcome.classList.add("is-animated");
+    const welcomeObserver = new IntersectionObserver((entries, observer) => {
+      if (!entries.some((entry) => entry.isIntersecting)) return;
+      welcome.classList.add("is-visible");
+      observer.disconnect();
+    }, { threshold: .25 });
+    welcomeObserver.observe(welcome);
+  }
 
   if ("IntersectionObserver" in window) {
     const sectionObserver = new IntersectionObserver((entries) => {
