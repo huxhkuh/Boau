@@ -31,7 +31,7 @@ const portfolioProjects = [
   {
     "title": "שותפים לתהילים",
     "url": "https://tahilim.netlify.app/",
-    "image": "assets/images/projects/tehilim.gif",
+    "image": "assets/images/projects/tehilim-web.gif",
     "description": [
       "שותפים לתהילים: אתר שבו תוכלו לקבל קישור לאמירת תהילים לרפואה או להדפיס חוברת לבית הקברות.",
       "עיצוב תואם לאווירה ולחשיבות."
@@ -40,7 +40,7 @@ const portfolioProjects = [
   {
     "title": "נדלניסט צפון",
     "url": "https://nadlanistzafon.co.il/",
-    "image": "assets/images/projects/nadlanist-north.gif",
+    "image": "assets/images/projects/nadlanist-north-web.gif",
     "description": [
       "אתר תיווך דירות באזור צפון הארץ.",
       "מותאם במיוחד לציבור החרדי.",
@@ -50,7 +50,7 @@ const portfolioProjects = [
   {
     "title": "אתגר הכסף הגדול",
     "url": "https://tipim-economic-game.huxh.chatgpt.site/",
-    "image": "assets/images/projects/money-challenge.gif",
+    "image": "assets/images/projects/money-challenge-web.gif",
     "description": [
       "אתגר הכסף הגדול מבית טיפים לכלכה נבונה.",
       "האמת היה ממש כיף לעבוד על הפרויקט הזה, משחק אינטראקטיבי מושך ומעניין עם פרסים בסופו.",
