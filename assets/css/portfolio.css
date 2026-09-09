@@ -1,0 +1,29 @@
+.portfolio-page { background: #fcfcfa; }
+.portfolio-page .inner-heading { max-width: 1640px; padding-bottom: 48px; }
+.portfolio-intro { margin: 24px 0 0; color: #616760; font-size: 21px; }
+.portfolio { padding: 0 var(--gutter) 64px; }
+.portfolio-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 48px; row-gap: 64px; max-width: 1496px; margin: auto; }
+.portfolio-item { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 24px; align-items: start; min-width: 0; border-top: 1px solid #cbd3cb; padding-top: 24px; }
+.portfolio-media { display: block; min-width: 0; background: #e8eee9; border: 1px solid #d6dcd6; border-radius: 4px; overflow: hidden; }
+.portfolio-media img { width: 100%; aspect-ratio: 16 / 10; object-fit: contain; }
+.portfolio-media:focus-visible { outline-offset: 5px; }
+.portfolio-copy { min-width: 0; }
+.portfolio-copy h2 { font-size: 27px; line-height: 1.15; margin: 0 0 18px; letter-spacing: 0; overflow-wrap: anywhere; }
+.portfolio-copy p { margin: 0 0 10px; font-size: 16px; line-height: 1.65; color: #586159; }
+.portfolio-visit { display: inline-flex; align-items: center; gap: 16px; min-height: 44px; margin-top: 12px; color: #9b3e20; border-bottom: 1px solid #c08b77; font-size: 15px; font-weight: 700; }
+.portfolio-visit span { transition: transform .2s; }
+.portfolio-visit:hover span { transform: translateX(-4px); }
+@media (max-width: 1100px) and (min-width: 701px) {
+  .portfolio-grid { column-gap: 24px; }
+  .portfolio-item { gap: 16px; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .portfolio-copy h2 { font-size: 23px; }
+  .portfolio-copy p { font-size: 15px; }
+}
+@media (max-width: 700px) {
+  .portfolio-grid { grid-template-columns: 1fr; row-gap: 40px; }
+  .portfolio-item { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; }
+  .portfolio-copy h2 { font-size: 24px; }
+  .portfolio-copy p { font-size: 15px; }
+  .portfolio-intro { font-size: 18px; }
+}
+@media (prefers-reduced-motion: reduce) { .portfolio-visit span { transition: none; } }
