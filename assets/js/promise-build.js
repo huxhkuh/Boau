@@ -116,7 +116,7 @@
     } else {
       // Keep the opening frame until the illustration is well inside the viewport.
       const bounds = visual.getBoundingClientRect();
-      const distance = Math.min(bounds.height * .9, window.innerHeight * .64);
+      const distance = Math.min(bounds.height * 1.2, window.innerHeight * .8);
       progress = clamp((window.innerHeight * .65 - bounds.top) / Math.max(1, distance));
     }
     render(progress);

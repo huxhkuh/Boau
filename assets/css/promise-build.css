@@ -63,7 +63,7 @@
 .build-visual { position: relative; min-width: 0; padding: 52px 20px 56px; direction: ltr; }
 .build-film { position: absolute; inset: -12px -14px; z-index: 3; opacity: 0; pointer-events: none; transition: opacity .35s ease; }
 .build-film video { width: 100%; height: 100%; display: block; object-fit: contain; mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent), linear-gradient(to bottom, transparent, #000 8%, #000 92%, transparent); mask-composite: intersect; }
-.has-build-film .build-film { opacity: 1; }
+.has-build-film .build-film { opacity: 1; transform: scale(1.1); }
 .has-build-film .build-visual { padding: 0; aspect-ratio: 1056 / 864; }
 .has-build-film .build-film { inset: 0; }
 .has-build-film .build-browser { position: absolute; inset: 0; }
