@@ -109,13 +109,15 @@
     let progress;
     if (pinned) {
       const bounds = track.getBoundingClientRect();
-      // Finish before the pin ends so the completed site has a quiet final beat.
-      progress = clamp(-bounds.top / Math.max(1, (bounds.height - stage.offsetHeight) * .9));
+      // Let the complete stage settle into view before assembling, then hold the result.
+      const distance = bounds.height - stage.offsetHeight;
+      const leadIn = stage.offsetHeight * .15;
+      progress = clamp((-bounds.top - leadIn) / Math.max(1, distance * .9 - leadIn));
     } else {
-      // On a small screen the illustration builds as it enters; text stays in flow.
+      // Keep the opening frame until the illustration is well inside the viewport.
       const bounds = visual.getBoundingClientRect();
       const distance = Math.min(bounds.height * .9, window.innerHeight * .64);
-      progress = clamp((window.innerHeight * .94 - bounds.top) / Math.max(1, distance));
+      progress = clamp((window.innerHeight * .65 - bounds.top) / Math.max(1, distance));
     }
     render(progress);
   }
@@ -129,7 +131,7 @@
     pinned = false;
     // Also fall back for text zoom or a viewport too short for the copy.
     if (desktop.matches && !reducedMotion.matches) {
-      const requiredHeight = Math.max(section.querySelector(".promise-inner").offsetHeight, visual.offsetHeight) + 80;
+      const requiredHeight = Math.max(section.querySelector(".promise-inner").offsetHeight, visual.offsetHeight, browser.offsetHeight) + 80;
       pinned = requiredHeight <= window.innerHeight;
     }
     section.classList.toggle("is-scroll-built", pinned);

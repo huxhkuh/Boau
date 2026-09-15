@@ -149,6 +149,9 @@
 /* Pin only when the complete stage fits. Native scrolling remains in control. */
 @media (min-width: 901px) and (min-height: 650px) {
   body:has(.promise-build) { overflow-x: clip; }
+  /* Reserve the same space before and after the film loads, sized to the viewport. */
+  .build-visual { width: 100%; max-width: calc((100svh - 100px) * 11 / 9); aspect-ratio: 1056 / 864; padding: 0; justify-self: center; }
+  .build-visual .build-browser { position: absolute; inset: auto 20px; top: 50%; translate: 0 -50%; }
   .promise-build.is-scroll-built .build-scroll { height: 300svh; }
   .promise-build.is-scroll-built .build-stage { position: sticky; top: 0; height: 100svh; padding-top: 40px; padding-bottom: 40px; }
 }
