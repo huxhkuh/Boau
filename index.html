@@ -53,6 +53,7 @@
   }
   </script>
   <link rel="stylesheet" href="assets/css/welcome.css?v=20260909-10">
+  <link rel="stylesheet" href="assets/css/promise-build.css?v=20260915-1">
 </head>
 <body>
   <a class="skip-link" href="#story">דלגו לתוכן</a>
@@ -109,14 +110,48 @@
       <h2 id="welcome-title"><span>רק</span><span>תספרו</span><strong>לנו</strong><span>מי</span><strong>אתם</strong></h2>
     </section>
 
-    <section class="promise" aria-labelledby="promise-title">
+    <section class="promise promise-build" id="promise" aria-labelledby="promise-title">
+      <div class="build-scroll">
+        <div class="build-stage">
       <div class="promise-inner">
         <h2 id="promise-title">אנחנו נעשה את כל השאר.</h2>
         <div class="promise-steps">
-          <p>נבנה איתכם את האפיון, <span>(אפיון זה אומר להבין מה בדיוק האתר בא לומר, לאיזה קהלים ומה היעדים שלו)</span></p>
-          <p>נמצא את הרעיון הנכון, <span>(גדול, קטן, צועק, שקט, לכל אתר צריך לחשוב אחרת)</span></p>
-          <p>נחשוב על הפרטים הקטנים <span>(אולי זה הכי חשוב)</span></p>
+          <p data-build-step="0"><i class="build-step-number" aria-hidden="true">01</i>נבנה איתכם את האפיון, <span>(אפיון זה אומר להבין מה בדיוק האתר בא לומר, לאיזה קהלים ומה היעדים שלו)</span></p>
+          <p data-build-step="1"><i class="build-step-number" aria-hidden="true">02</i>נמצא את הרעיון הנכון, <span>(גדול, קטן, צועק, שקט, לכל אתר צריך לחשוב אחרת)</span></p>
+          <p data-build-step="2"><i class="build-step-number" aria-hidden="true">03</i>נחשוב על הפרטים הקטנים <span>(אולי זה הכי חשוב)</span></p>
         </div>
+      </div>
+      <div class="build-visual" aria-hidden="true">
+        <div class="build-film"><video data-build-film data-src="assets/videos/boau-paper-assembly.mp4" poster="assets/images/editorial/paper-assembly-poster.webp" preload="none" muted playsinline disablepictureinpicture tabindex="-1"></video></div>
+        <div class="build-grid"></div>
+        <div class="build-orbit build-orbit-type" data-build-part="type-sample"><b>אא</b><i></i><i></i></div>
+        <div class="build-orbit build-orbit-palette" data-build-part="palette"><i></i><i></i><i></i><i></i></div>
+        <div class="build-browser">
+          <div class="build-browser-bar"><div class="build-browser-dots"><i></i><i></i><i></i></div><span class="build-browser-address"></span><span class="build-browser-plus">+</span></div>
+          <div class="build-canvas">
+            <div class="build-demo-nav"><b data-build-part="brand">בואו</b><div data-build-part="nav"><i></i><i></i><i></i></div><span data-build-part="nav-dot"></span></div>
+            <div class="build-demo-hero">
+              <div class="build-demo-copy">
+                <div class="build-wire-text"><i></i><i></i><i></i></div>
+                <div class="build-demo-title" data-build-part="title">לבנות אתר<br><em>שמרגיש<br>כמוכם.</em></div>
+                <div class="build-demo-lines" data-build-part="copy"><i></i><i></i></div>
+                <span class="build-demo-cta" data-build-part="button">בואו נדבר <i>←</i></span>
+              </div>
+              <div class="build-demo-image">
+                <div class="build-image-wire"><i></i><i></i></div>
+                <img data-build-part="image" src="assets/images/editorial/pencil-craft.webp" alt="" width="1100" height="825" loading="lazy" decoding="async">
+                <span class="build-image-caption" data-build-part="caption">כתיבה · עיצוב · אתרים</span>
+              </div>
+            </div>
+            <div class="build-demo-bottom" data-build-part="details"><span>אתרים . עיצוב . אישיות</span><i></i><b>בואו.</b></div>
+          </div>
+          <div class="build-selection" data-build-part="selection"><i></i><i></i><i></i><i></i></div>
+        </div>
+        <div class="build-meter"><span>01</span><div><i></i></div><span>03</span></div>
+      </div>
+        </div>
+      </div>
+      <div class="build-outro">
         <p class="promise-finish">ונעצב אתר שאי אפשר להתבלבל למי הוא שייך.</p>
         <nav class="explore-links" aria-label="גלו עוד עלינו">
           <a class="explore-link" href="about.html">
@@ -164,5 +199,6 @@
   <nav class="page-links" aria-label="עוד באתר"><a href="about.html">מה אני עושה <span aria-hidden="true">←</span></a><a href="process.html">התהליך <span aria-hidden="true">←</span></a><a href="pricing.html">מחירים <span aria-hidden="true">←</span></a><a href="projects.html">עבודות <span aria-hidden="true">←</span></a></nav>
 <footer class="site-footer"><a class="brand footer-brand" href="#top" aria-label="בּוֹאוּ — חזרה להתחלה"><span class="brand-dot" aria-hidden="true"></span><span>בואו</span></a><p>אתרים . עיצוב . אישיות</p><a href="privacy.html">מדיניות הפרטיות</a></footer>
   <script src="assets/js/main.js?v=20260909-9"></script>
+  <script src="assets/js/promise-build.js?v=20260915-1"></script>
 </body>
 </html>
