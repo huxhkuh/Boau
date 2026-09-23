@@ -10,7 +10,7 @@
   const browser = section.querySelector(".build-browser");
   const steps = [...section.querySelectorAll("[data-build-step]")];
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  const desktop = window.matchMedia("(min-width: 901px) and (min-height: 650px)");
+  const desktop = window.matchMedia("(min-width: 901px)");
   const animations = [];
   const clamp = (value) => Math.max(0, Math.min(1, value));
   let frame = 0;
@@ -129,7 +129,8 @@
   function configure() {
     section.classList.remove("is-scroll-built");
     pinned = false;
-    // Also fall back for text zoom or a viewport too short for the copy.
+    // Measure the content instead of excluding short desktop windows by height.
+    // Keep native scrolling if text zoom makes the complete stage too tall.
     if (desktop.matches && !reducedMotion.matches) {
       const requiredHeight = Math.max(section.querySelector(".promise-inner").offsetHeight, visual.offsetHeight, browser.offsetHeight) + 80;
       pinned = requiredHeight <= window.innerHeight;

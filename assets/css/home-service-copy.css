@@ -1,0 +1,54 @@
+.contact-copy > .contact-service-line {
+  max-width: 28em;
+  margin-bottom: 1rem;
+  color: var(--ink);
+  font-size: clamp(1.05rem, 1.25vw, 1.2rem);
+  font-weight: 600;
+  line-height: 1.65;
+}
+
+.footer-description {
+  min-width: 0;
+  max-width: 40rem;
+  text-align: center;
+}
+
+.footer-description .footer-service-line {
+  margin-top: .6rem;
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.6;
+  text-wrap: balance;
+}
+
+.footer-services-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  min-height: 44px;
+  margin-top: .2rem;
+  color: var(--coral-dark);
+  font-size: .95rem;
+  text-decoration: underline;
+  text-underline-offset: .25em;
+}
+
+.footer-services-link:hover {
+  color: var(--ink);
+}
+
+@media (max-width: 700px) {
+  .site-footer {
+    grid-template-columns: 1fr auto;
+    gap: 1.1rem 1.5rem;
+  }
+
+  .footer-description {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-self: center;
+  }
+
+  .site-footer .footer-description p { display: block; }
+}

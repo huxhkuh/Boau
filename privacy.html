@@ -15,14 +15,15 @@
     :root{--paper:#f4efe6;--soft:#fbf7f0;--ink:#182126;--muted:#6d675f;--coral:#d35e35;--line:#d6c8b8}
     *{box-sizing:border-box}html{background:var(--paper)}body{min-width:320px;margin:0;padding:clamp(1rem,4vw,4rem);color:var(--ink);background:var(--paper);font-family:"Yossi","Heebo",Arial,sans-serif;line-height:1.85}
     a{color:inherit}.shell{width:min(100%,900px);margin:auto}.header{display:flex;align-items:center;justify-content:space-between;margin-bottom:clamp(2rem,6vw,5rem);padding:.7rem 1rem;border:1px solid var(--line);border-radius:999px;background:var(--soft)}
-    .brand{font-size:1.2rem;font-weight:800;text-decoration:none}.brand::before{content:"";display:inline-block;width:9px;aspect-ratio:1;margin-left:.55rem;border-radius:50%;background:var(--coral)}.back{padding:.55rem .9rem;border-radius:999px;color:white;background:var(--ink);font-size:.8rem;text-decoration:none}
+    .brand{font-size:1.2rem;font-weight:800;text-decoration:none}.back{padding:.55rem .9rem;border-radius:999px;color:white;background:var(--ink);font-size:.8rem;text-decoration:none}
     main{padding:clamp(2rem,7vw,6rem);border:1px solid var(--line);border-radius:clamp(28px,5vw,52px);background:var(--soft)}h1{margin:0 0 2rem;font-family:"Tel Aviv Modernist",Arial,sans-serif;font-size:clamp(3rem,8vw,6.5rem);font-weight:700;line-height:1}.accent{color:var(--coral)}p{max-width:620px;margin:0 0 1rem;color:var(--muted);font-size:1.05rem}
     a:focus-visible{outline:3px solid var(--coral);outline-offset:4px}@media(max-width:560px){.header{padding:.6rem}.back{font-size:.72rem}main{padding:2rem 1.25rem}}
   </style>
+  <link rel="stylesheet" href="assets/css/brand-underline.css?v=20260923-1">
 </head>
 <body>
   <div class="shell">
-    <header class="header"><a class="brand" href="index.html" aria-label="בּוֹאוּ — חזרה לאתר">בואו</a><a class="back" href="index.html">חזרה לאתר</a></header>
+    <header class="header"><a class="brand" href="index.html" aria-label="בּוֹאוּ — חזרה לאתר"><span class="brand-word">בואו<svg class="brand-underline" viewBox="0 0 60 10" aria-hidden="true" focusable="false"><path d="M57 5C43 2 22 8 3 5" pathLength="1"/></svg></span></a><a class="back" href="index.html">חזרה לאתר</a></header>
     <main>
       <h1>מדיניות <span class="accent">פרטיות.</span></h1>
       <p>הפרטים שנשלחים דרך האתר משמשים לצורך יצירת קשר בלבד.</p>

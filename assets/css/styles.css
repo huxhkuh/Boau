@@ -284,10 +284,9 @@ body.hero-opening .site-header {
 
 .site-header { position: fixed; z-index: 100; top: 14px; right: var(--gutter); left: var(--gutter); display: grid; grid-template-columns: minmax(190px, .7fr) auto minmax(120px, .7fr); align-items: center; gap: 2rem; width: min(calc(100% - var(--gutter) * 2), var(--max)); min-height: 66px; margin-inline: auto; padding: .6rem .75rem .6rem 1rem; border: 1px solid rgba(24, 33, 38, .13); border-radius: 999px; background: rgba(244, 239, 230, .96); transition: transform .35s ease, background .25s ease, opacity .3s ease; }
 .site-header.is-hidden { transform: translateY(-130%); }
-.brand { display: grid; grid-template-columns: 9px auto; align-items: center; column-gap: .6rem; width: max-content; line-height: 1; }
-.brand > span:not(.brand-dot) { font-size: 1.3rem; font-weight: 800; letter-spacing: -.06em; }
-.brand small { grid-column: 2; margin-top: .3rem; color: var(--muted); font-size: .63rem; font-weight: 500; letter-spacing: .02em; }
-.brand-dot { width: 9px; aspect-ratio: 1; border-radius: 50%; background: var(--coral); }
+.brand { display: grid; grid-template-columns: auto; align-items: center; width: max-content; line-height: 1; }
+.brand > .brand-word { font-size: 1.3rem; font-weight: 800; letter-spacing: -.06em; }
+.brand small { margin-top: .3rem; color: var(--muted); font-size: .63rem; font-weight: 500; letter-spacing: .02em; }
 .site-header nav { display: flex; align-items: center; justify-content: center; gap: clamp(1.1rem, 2.8vw, 2.6rem); font-size: .82rem; font-weight: 600; }
 .site-header nav a { position: relative; padding: .45rem .1rem; color: #4b4d4b; }
 .site-header nav a::after { content: ""; position: absolute; right: 0; bottom: .15rem; width: 100%; height: 2px; border-radius: 999px; background: var(--coral); transform: scaleX(0); transform-origin: right; transition: transform .25s ease; }
@@ -584,7 +583,6 @@ body.hero-opening .site-header {
 .footer-brand { justify-self: start; }.site-footer p { margin: 0; text-align: center; }.site-footer > a:last-child { justify-self: end; text-decoration: underline; text-decoration-color: var(--coral); text-underline-offset: .25em; }
 
 /* The page stays soft in shape, but never still. */
-.brand-dot { animation: dot-pulse 1.8s ease-in-out infinite; }
 .section-thread { overflow: visible; background: linear-gradient(to bottom, transparent, var(--coral), transparent); background-size: 100% 45%; animation: thread-flow 1.65s linear infinite; }
 .section-thread span, .soft-divider i, .craft-index { animation: edit-pulse 2s ease-in-out infinite; }
 .scroll-note span { animation: nudge-down 1.4s ease-in-out infinite; }
@@ -724,7 +722,7 @@ body.hero-opening .site-header {
   .site-header { padding-inline: .65rem; }
   .intro-skip { top: 5rem; left: .8rem; }
   .intro-scroll-hint { bottom: 20px; width: max-content; }
-  .brand > span:not(.brand-dot) { font-size: 1.12rem; }
+  .brand > .brand-word { font-size: 1.12rem; }
   .header-cta { font-size: .74rem; }
   .section { padding-block: 5.5rem; }
   .section h2 { margin-bottom: 2.4rem; font-size: clamp(2.8rem, 14vw, 4.5rem); }
