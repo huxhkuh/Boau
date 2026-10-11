@@ -10,11 +10,11 @@
   const browser = section.querySelector(".build-browser");
   const steps = [...section.querySelectorAll("[data-build-step]")];
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  const desktop = window.matchMedia("(min-width: 901px)");
   const animations = [];
   const clamp = (value) => Math.max(0, Math.min(1, value));
   let frame = 0;
   let pinned = false;
+  let pinTop = 0;
   let observing = true;
   let activeStep = -1;
   const film = section.querySelector("[data-build-film]");
@@ -111,8 +111,8 @@
       const bounds = track.getBoundingClientRect();
       // Let the complete stage settle into view before assembling, then hold the result.
       const distance = bounds.height - stage.offsetHeight;
-      const leadIn = stage.offsetHeight * .15;
-      progress = clamp((-bounds.top - leadIn) / Math.max(1, distance * .9 - leadIn));
+      const leadIn = window.innerHeight * .15;
+      progress = clamp((-bounds.top + pinTop - leadIn) / Math.max(1, distance * .9 - leadIn));
     } else {
       // Keep the opening frame until the illustration is well inside the viewport.
       const bounds = visual.getBoundingClientRect();
@@ -127,15 +127,20 @@
   }
 
   function configure() {
-    section.classList.remove("is-scroll-built");
-    pinned = false;
-    // Measure the content instead of excluding short desktop windows by height.
-    // Keep native scrolling if text zoom makes the complete stage too tall.
-    if (desktop.matches && !reducedMotion.matches) {
-      const requiredHeight = Math.max(section.querySelector(".promise-inner").offsetHeight, visual.offsetHeight, browser.offsetHeight) + 80;
-      pinned = requiredHeight <= window.innerHeight;
-    }
+    // Keep the assembly pinned at every width. A tall stage first scrolls its
+    // copy into view, then holds its lower illustration inside the viewport.
+    pinned = !reducedMotion.matches;
     section.classList.toggle("is-scroll-built", pinned);
+    if (pinned) {
+      const stageHeight = stage.offsetHeight;
+      pinTop = Math.min(0, window.innerHeight - stageHeight);
+      section.style.setProperty("--build-stage-height", `${stageHeight}px`);
+      section.style.setProperty("--build-pin-top", `${pinTop}px`);
+    } else {
+      pinTop = 0;
+      section.style.removeProperty("--build-stage-height");
+      section.style.removeProperty("--build-pin-top");
+    }
     if (reducedMotion.matches) {
       render(1);
       steps.forEach((step) => step.classList.remove("is-current"));
@@ -149,7 +154,10 @@
   window.addEventListener("resize", configure, { passive: true });
   window.addEventListener("pageshow", configure);
   reducedMotion.addEventListener("change", configure);
-  desktop.addEventListener("change", configure);
+  if ("ResizeObserver" in window) {
+    const stageObserver = new ResizeObserver(configure);
+    stageObserver.observe(stage);
+  }
   if ("IntersectionObserver" in window) {
     const observer = new IntersectionObserver(([entry]) => {
       observing = entry.isIntersecting;

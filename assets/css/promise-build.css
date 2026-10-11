@@ -146,15 +146,16 @@
 .promise-build .explore-art { display: none; }
 .promise-build .explore-label { font-size: clamp(21px, 2vw, 27px); }
 .promise-build .explore-label > span { color: var(--build-accent); }
-/* Pin only when the complete stage fits. Native scrolling remains in control. */
+/* Keep the assembly pinned without intercepting native scroll input. */
+body:has(.promise-build) { overflow-x: clip; }
+.promise-build.is-scroll-built .build-scroll { height: calc(var(--build-stage-height, 100svh) + 330svh); }
+.promise-build.is-scroll-built .build-stage { position: sticky; top: var(--build-pin-top, 0px); min-height: 100svh; }
 @media (min-width: 901px) {
-  body:has(.promise-build) { overflow-x: clip; }
   /* Reserve the same space before and after the film loads, sized to the viewport. */
   .build-visual { width: 100%; max-width: calc((100svh - 100px) * 11 / 9); aspect-ratio: 1056 / 864; padding: 0; justify-self: center; }
   .build-visual .build-browser { position: absolute; inset: auto 20px; top: 50%; translate: 0 -50%; }
   .has-build-film .build-film { transform: scale(1.16); }
-  .promise-build.is-scroll-built .build-scroll { height: 430svh; }
-  .promise-build.is-scroll-built .build-stage { position: sticky; top: 0; height: 100svh; padding-top: 40px; padding-bottom: 40px; }
+  .promise-build.is-scroll-built .build-stage { padding-top: 40px; padding-bottom: 40px; }
 }
 @media (max-width: 1100px) and (min-width: 901px) {
   .build-stage { gap: 25px; padding-inline: 32px; grid-template-columns: minmax(300px, .9fr) minmax(0, 1.1fr); }
@@ -169,7 +170,7 @@
   .promise-build h2 { max-width: 480px; font-size: clamp(46px, 8vw, 68px); margin-bottom: 30px; }
   .promise-build .promise-steps p { font-size: 23px; padding-block: 16px; }
   .promise-build .promise-steps span { font-size: 17px; }
-  .build-visual { padding: 38px 12px 43px; }
+  .build-visual { width: 100%; max-width: calc((100svh - 100px) * 11 / 9); justify-self: center; padding: 38px 12px 43px; }
   .build-film { inset: 0 -12px; }
   .build-demo-title { font-size: clamp(35px, 6.5vw, 55px); }
   .build-demo-image { min-height: 220px; }
